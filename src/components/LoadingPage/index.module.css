@@ -1,0 +1,56 @@
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* 固定定位，覆盖整个视口 */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(242, 241, 239, 0.8); /* 使用你提供的 body 背景色并增加透明度 */
+  z-index: 9999; /* 确保在最上层 */
+}
+
+.loader {
+  position: relative; /* 相对于 loaderContainer 定位 */
+  width: 50px;
+  height: 10px;
+  background: #3498DB; /* 蓝色条 */
+  border-radius: 5px;
+  animation: load 1.8s ease-in-out infinite;
+}
+
+.loader::before,
+.loader::after {
+  position: absolute;
+  display: block;
+  content: "";
+  animation: load 1.8s ease-in-out infinite;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.loader::before {
+  top: -20px; /* 上方的红色条 */
+  left: 10px;
+  width: 40px;
+  background: #EF4836;
+}
+
+.loader::after {
+  bottom: -20px; /* 下方的黄色条 */
+  width: 35px;
+  background: #F5AB35;
+}
+
+@keyframes load {
+  0% {
+    transform: translateX(40px);
+  }
+  50% {
+    transform: translateX(-30px);
+  }
+  100% {
+    transform: translateX(40px);
+  }
+}

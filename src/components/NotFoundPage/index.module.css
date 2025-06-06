@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; /* Full viewport height */
+  text-align: center;
+  background-color: #f4f6f8; /* Light gray background for a subtle feel */
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+}
+
+.content {
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 7rem; /* Even larger 404 text */
+  font-weight: bold;
+  color: #3498db; /* A bright, friendly blue */
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.message {
+  font-size: 1.75rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.subMessage {
+  font-size: 1.1rem;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.homeLink {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  color: #fff;
+  background-image: linear-gradient(to right, #3498db, #2980b9);
+  border: none;
+  border-radius: 25px; /* More rounded button */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+.homeLink:hover,
+.homeLink:focus {
+  background-image: linear-gradient(to right, #2980b9, #3498db);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.5);
+  outline: none;
+}

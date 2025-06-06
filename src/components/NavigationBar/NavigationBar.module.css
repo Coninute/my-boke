@@ -1,0 +1,272 @@
+@import "./font/iconfont.css";
+
+:root {
+  --nav-height: 60px;
+  --nav-padding-x: 20px;
+  --nav-link-hover-bg: rgba(0, 0, 0, 0.05);
+  --nav-text-color: #333;
+  --nav-active-color: #007bff; /* Or your theme's primary color */
+  --logo-font-size: 1.5rem;
+  --search-input-bg: #f0f0f0;
+  --search-input-border: #e0e0e0;
+  --text-secondary-color: #777; /* Added for placeholder */
+}
+
+[data-theme='dark'] :root {
+  --nav-link-hover-bg: rgba(255, 255, 255, 0.1);
+  --nav-text-color: #ccc;
+  --nav-active-color: #4dabf7; /* Lighter blue for dark mode */
+  --search-input-bg: #2c2c2c;
+  --search-input-border: #444;
+  --text-secondary-color: #aaa; /* Added for placeholder in dark mode */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  padding: 0 var(--nav-padding-x);
+  /* background-color: var(--bg-color, #fff); Use theme background */
+  background-color: transparent;
+  /* border-bottom: 1px solid var(--border-color, #eee); */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  color: var(--nav-text-color);
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: var(--logo-font-size);
+  font-weight: bold;
+  color: var(--nav-text-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logoQ {
+  color: var(--nav-active-color); /* Blue 'Y' as in image */
+  margin-right: 2px;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  /* Allow navList to take up available space if needed, or center it */
+  flex-grow: 1; 
+  justify-content: center;
+}
+
+.navItem {
+  margin: 0 12px; /* Spacing between nav items */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative; /* For the red dot */
+}
+
+.navLink {
+  color: var(--nav-text-color);
+  text-decoration: none;
+  padding: 0 8px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  border-bottom: 2px solid transparent; /* Placeholder for active state */
+  transition: color 0.2s ease, border-bottom-color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--nav-active-color);
+}
+
+.navIcon {
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 1.1em; /* Adjust icon size as needed */
+  /* Ensure icon aligns well with text */
+  display: inline-flex;
+  align-items: center;
+}
+
+.activeLink {
+  color: var(--nav-active-color);
+  font-weight: 500;
+  border-bottom-color: var(--nav-active-color);
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between search and theme toggle */
+}
+
+.searchContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  padding: 8px 12px 8px 35px; /* Padding for icon */
+  border-radius: 15px;
+  border: 1px solid var(--search-input-border);
+  background-color: var(--search-input-bg);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  min-width: 200px; /* Adjust as needed */
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.searchInput::placeholder {
+  color: var(--text-secondary-color);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--nav-active-color);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-secondary-color);
+  font-size: 1rem;
+  /* pointer-events: none; Removed to make the icon clickable */
+  cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+  z-index: 1; /* Ensure it's clickable if input overlaps slightly or due to other styling */
+  padding: 5px; /* Add some padding to make it easier to click */
+  margin-left: -5px; /* Adjust margin to compensate for padding if needed for visual alignment */
+  transition: color 0.2s ease;
+}
+
+.searchIcon:hover {
+  color: var(--nav-active-color);
+}
+
+.themeSwitch {
+  display: flex; 
+  align-items: center;
+  width: 120px;
+  height: 30px; 
+  border-radius: 15px; /* height / 2 */
+  background-color: #E5E7EB; /* Light mode switch body (gray-200) */
+  cursor: pointer;
+  position: relative; 
+  border: 1px solid #D1D5DB; /* gray-300 */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  box-sizing: border-box;
+  overflow: hidden; 
+}
+
+[data-theme='dark'] .themeSwitch {
+  background-color: #374151; /* Dark mode switch body (gray-700) */
+  border-color: #4B5563; /* gray-600 */
+}
+
+.iconSlider {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #ffffff; /* Slider knob is always white */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px; /* Emoji size */
+  color: #3B82F6; /* Moon color (blue-500) */
+  
+  position: absolute; 
+  top: 50%;
+  /* Initial position: (switch_height - slider_height) / 2 from edge */
+  left: calc((30px - 22px) / 2); /* Should be 4px */
+  transform: translateY(-50%);
+  /* Elastic transition for sliding effect */
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), color 0.3s ease;
+  z-index: 1; /* Ensure slider is above text if they were to overlap */
+}
+
+.themeSwitch.darkModeActive .iconSlider {
+  /* Distance to translate: switch_width - slider_width - 2 * slider_margin_from_edge */
+  /* slider_margin_from_edge = (30px - 22px) / 2 = 4px */
+  /* Translate distance = 120px - 22px - (2 * 4px) = 120 - 22 - 8 = 90px */
+  transform: translateX(calc(120px - 22px - 2 * ((30px - 22px) / 2))) translateY(-50%);
+  color: #F59E0B; /* Sun color (amber-500) */
+}
+
+.themeText {
+  flex-grow: 1; /* Takes up available space in the flex container */
+  font-size: 0.6rem; 
+  font-weight: 700; 
+  line-height: 1; /* Ensure text fits vertically */
+  color: #4B5563; /* Text color for light mode (gray-600) */
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center; /* Center text in its available space */
+  /* Padding will create space for the icon */
+}
+
+[data-theme='dark'] .themeText {
+  color: #D1D5DB; /* Text color for dark mode (gray-300) */
+}
+
+/* Light Mode: Text is to the right of icon. Icon area on left is approx 4px margin + 22px width = 26px */
+.themeSwitch:not(.darkModeActive) .themeText {
+  padding-left: calc(22px + 4px); /* Space for icon (width + left_offset_of_icon) */
+  padding-right: 4px; /* Small padding on the other side */
+}
+
+/* Dark Mode: Text is to the left of icon. Icon area on right is approx 22px width + 4px margin = 26px */
+.themeSwitch.darkModeActive .themeText {
+  padding-right: calc(22px + 4px); /* Space for icon (width + right_offset_of_icon) */
+  padding-left: 4px; /* Small padding on the other side */
+}
+
+/* Responsive adjustments */
+@media (max-width: 850px) { /* Adjusted breakpoint for navList */
+  .navItem {
+    margin: 0 8px;
+  }
+  .navLink {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navList {
+     display: none; /* Hide nav links on small screens, implement burger menu later if needed */
+  }
+  .searchInput {
+    min-width: 150px;
+  }
+  .navbar {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.3rem;
+  }
+  .searchInput {
+    display: none; /* Hide search on very small screens */
+  }
+  .navRight {
+    gap: 10px;
+  }
+}
