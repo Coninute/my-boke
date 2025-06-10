@@ -1,15 +1,21 @@
 import React from 'react';
+import MainContent from './components/MainContent';
+import { articles } from './blogData';
 import styles from './index.module.css';
-import VantaBackground from '../../components/VantaBackground'; // 导入新的背景组件
+import VantaBackground from '../../components/VantaBackground';
 
 function BlogPage() {
   return (
-    <div className={styles.container}>
-      <VantaBackground />
-      <h1>个人博客</h1>
-      <p>这里是我的博客文章。</p>
+    <div className={styles.blogPage}>
+      <div className={styles.vantaBox}>
+        <VantaBackground />
+      </div>
+      <div className={styles.scrollBox}>
+        <MainContent articles={articles} />
+      </div>
     </div>
   );
 }
 
 export default BlogPage;
+

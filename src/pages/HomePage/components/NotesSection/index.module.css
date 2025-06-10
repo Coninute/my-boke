@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+.notesSection {
+  width: 100%;
+  max-width: 1600px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #f8f9fa;
+  border-radius: 30px;
+  font-family: inherit;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  display: inline-block;
+  margin-right: 16px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #7f8c8d;
+  display: inline-block;
+}
+
+.mainContent {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Calendar Styles */
+.calendar {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.calendarHeader button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #7f8c8d;
+  padding: 5px;
+  transition: color 0.2s ease;
+}
+.calendarHeader button:hover {
+  color: #2c3e50;
+}
+
+.todayButton {
+    font-size: 14px;
+    color: #3498db;
+    font-weight: 500;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  text-align: center;
+}
+
+.weekDay {
+  font-size: 12px;
+  color: #95a5a6;
+  font-weight: 500;
+}
+
+.day {
+  font-size: 14px;
+  padding: 8px 0;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.day:hover:not(.otherMonth) {
+  background-color: #f1f2f6;
+}
+
+.otherMonth {
+  color: #dce0e2;
+  cursor: default;
+}
+
+.selectedDay {
+  background-color: #3498db;
+  color: white;
+}
+
+.hasNote::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #3498db;
+}
+
+.selectedDay.hasNote::after {
+    background-color: white;
+}
+
+/* Quote Styles */
+.quote {
+  text-align: left;
+  color: #7f8c8d;
+}
+
+.quote p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.quoteLarge {
+  font-size: 36px;
+  font-weight: 300;
+  color: #bdc3c7;
+  margin: 8px 0 !important;
+}
+
+
+/* Right Column Styles */
+.rightColumn {
+  flex-grow: 1;
+}
+
+.noteCard {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  min-height: 450px; /* 保证最小高度 */
+  display: flex;
+  flex-direction: column;
+}
+
+.noNote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #95a5a6;
+  font-size: 16px;
+}
+
+.noteHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.noteHeader h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.noteHeader span {
+  font-size: 14px;
+  color: #95a5a6;
+  display: flex;
+  align-items: center;
+}
+
+.sunIcon {
+  color: #f1c40f;
+  margin-left: 8px;
+}
+
+.noteContent {
+  font-size: 16px;
+  line-height: 2;
+  color: #34495e;
+  flex-grow: 1;
+  white-space: pre-wrap;
+}
+
+.signature {
+  align-self: flex-end;
+  font-family: 'Caveat', cursive;
+  font-size: 24px;
+  color: #2c3e50;
+  margin-top: 20px;
+}
+
+.moreButtonContainer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.moreButton {
+  padding: 10px 30px;
+  border-radius: 20px;
+  border: 1px solid #bdc3c7;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+}
+
+.moreButton:hover {
+  background-color: #2c3e50;
+  color: white;
+  border-color: #2c3e50;
+}
+
+@media (max-width: 992px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+  }
+  .noteCard {
+      min-height: 300px;
+  }
+}

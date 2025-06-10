@@ -1,0 +1,38 @@
+export const articles = [
+  {
+    id: 1,
+    title: '关于我的博客',
+    summary: '欢迎指教...',
+    tags: ['博客搭建', '博客标签'],
+    date: '2023-03-17 07:09:51',
+    pinned: true,
+    image: '/logo.png',
+  },
+  {
+    id: 2,
+    title: 'node项目log4js进行日志记录',
+    summary: '安装与了解目前的版本是: 6.6.1在终端打印消息;终端效果: log4的日志默认从info级别,时间级别-日志内容 组成了有一个概念,级别,log4可配置的级别一共有九个,这里找了一个参考图: image.png除了外,其他七个级别从低到高如上图所...',
+    tags: ['node', 'koa'],
+    date: '2022-09-11 06:57:00',
+    pinned: false,
+    image: '/logo.png',
+  },
+  {
+    id: 3,
+    title: '从零开发ts装饰器管理koa路由',
+    summary: '前言两年前刚学ts,当时看了个简单的koa的demo,介绍了如何用装饰器管理koa的路由;TS装饰器初体验,用装饰器管理koa接口但当时还只是demo学习,并没有真正在公司的项目中使用起来,后面博主搭建并开发公司真正的koa项目,一开始并没...',
+    tags: ['typescript', 'koa'],
+    date: '2022-06-01 07:00:29',
+    pinned: false,
+    image: '/logo.png',
+  },
+  {
+    id: 4,
+    title: 'ts项目从零配置eslint + prettier',
+    summary: '本文将介绍自己的ts项目在不依赖脚手架的情况下配置eslint + prettier来创建符合自己编码规范的项目。',
+    tags: ['typescript'],
+    date: '2022-05-20 10:00:00',
+    pinned: false,
+    image: '/logo.png',
+  },
+];

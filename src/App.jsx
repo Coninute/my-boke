@@ -39,7 +39,7 @@ function App() {
       const currentScrollY = window.scrollY; // scrollContainer 现在是 window
       if (currentScrollY > lastScrollYRef.current && currentScrollY > 100) {
         setNavDirection('down');
-        window.scrollY > pageHeight+50 ? navRef.current.style.display = 'none' : navRef.current.style.display = 'block';
+        window.scrollY > pageHeight-100 ? navRef.current.style.display = 'none' : navRef.current.style.display = 'block';
       } else if (currentScrollY < lastScrollYRef.current) {
         setNavDirection('up');
         navRef.current.style.display = 'block';

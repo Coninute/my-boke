@@ -1,20 +1,22 @@
 .heroSection {
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
   position: relative;
   z-index: 2;
+  padding: 20px;
 }
 
 .heroContent {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 50px;
-  border-radius: 20px;
-  max-width: 900px;
+  background: rgba(80, 80, 80, 0.5); /* 半透明深灰色背景，更接近图片效果 */
+  backdrop-filter: blur(10px); /* 毛玻璃效果 */
+  -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
+  padding: 40px 60px;
+  border-radius: 20px; /* 圆角 */
+  max-width: 800px;
+  color: white;
   animation: fadeIn 1.5s ease-in-out;
 }
 
@@ -24,64 +26,60 @@
 }
 
 .heroTitle {
-  font-size: 4.5rem;
-  font-weight: 700;
-  margin: 0;
-  letter-spacing: 2px;
+  font-size: 3.5rem; /* 根据图片调整字号 */
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  letter-spacing: 1px;
 }
 
 .heroSubtitle {
-  font-size: 1.8rem;
-  margin: 20px 0 40px;
+  font-size: 1.25rem; /* 根据图片调整字号 */
+  margin: 0 0 30px 0;
   font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .scrollButton {
   background: transparent;
-  border: 2px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.8); /* 更细的边框 */
   color: white;
-  padding: 15px 30px;
-  font-size: 1.2rem;
+  padding: 12px 28px;
+  font-size: 1rem;
   border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px; /* 微调间距 */
 }
 
 .scrollButton:hover {
-  background-color: white;
-  color: #333;
+  background-color: rgba(255, 255, 255, 0.15); /* 更微妙的悬停效果 */
+  transform: translateY(-2px);
 }
 
 .arrow {
-  font-size: 1.5rem;
-  animation: bounce 2s infinite;
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
+.scrollButton:hover .arrow {
+  transform: translateY(3px); /* 悬停时箭头轻微下移 */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .heroContent {
+    padding: 30px 40px;
+  }
   .heroTitle {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   .heroSubtitle {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
   .scrollButton {
-    padding: 12px 25px;
-    font-size: 1rem;
+    padding: 10px 22px;
+    font-size: 0.9rem;
   }
 }
