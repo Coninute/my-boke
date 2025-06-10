@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './NavigationBar.module.css';
 import './font/iconfont.css'; // 引入字体图标 CSS - 检查是否有太阳/月亮图标
@@ -6,14 +6,15 @@ import './font/iconfont.css'; // 引入字体图标 CSS - 检查是否有太阳/
 const navItemsData = [
   { path: "/", label: "个人主页", icon: "icon-shouye" },
   { path: "/blog", label: "个人博客", icon: "icon-boke" },
-  { path: "/projects", label: "个人项目", icon: "icon-xiangmujingli" },
-  { path: "/ai-query", label: "AI智问", icon: "icon-wenzhen" },
+  { path: "/projects", label: "个人项目", icon: "icon-xiangmu" },
+  { path: "/ai-query", label: "AI智问", icon: "icon-AIdamoxing" },
   { path: "/contact", label: "联系博主", icon: "icon-lianxi" },
   { path: "/message-wall", label: "留言墙", icon: "icon-liuyanqiang" }
 ];
 
-function NavigationBar({ theme, toggleTheme }) { // Accept theme and toggleTheme as props
+function NavigationBar({ theme, toggleTheme }) { // 接收主题和切换主题的 props
   const [searchQuery, setSearchQuery] = useState('');
+
 
   const handleSearch = () => {
     if (searchQuery.trim() !== '') {
@@ -31,8 +32,9 @@ function NavigationBar({ theme, toggleTheme }) { // Accept theme and toggleTheme
       handleSearch();
     }
   };
+  
   return (
-    <nav className={styles.navbar}>
+    <nav className={styles.navbar}> {/* 应用动态计算的 className */}
       <div className={styles.navLeft}>
         <NavLink to="/" className={styles.logo}>
           <span className={styles.logoQ}>Q</span>YN
@@ -80,7 +82,7 @@ function NavigationBar({ theme, toggleTheme }) { // Accept theme and toggleTheme
             {theme === 'light' ? '🌙' : '☀️'}
           </div>
           <span className={styles.themeText}>
-            {theme === 'light' ? 'LIGHT MODE' : 'DARK MODE'}
+            {theme === 'light' ? 'LIGHT' : 'DARK'}
           </span>
         </button>
       </div>

@@ -1,18 +1,13 @@
 .homePage {
-  height: 100vh;
-  overflow-y: auto;
+  width: 100%;
+  height: auto;
 }
 .scrollBox {
-  width:100%;
+  position: relative; /* Ensure it's a positioning context */
+  z-index: 2; /* Higher z-index to be on top of the background */
+  width: 100%;
   min-height: 100vh;
-}
-.vantaContainer {
-  position: relative; /* For positioning content on top */
-  display: flex; /* To center content if needed */
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; /* Hide anything that might overflow from Vanta */
+  background-color: transparent; /* Make sure content background is see-through */
 }
 
 .content {

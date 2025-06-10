@@ -1,266 +1,87 @@
-.heroContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  min-height: 100vh; 
-  padding: 50px 80px;
-  color: #fff; 
-  position: relative; 
-  z-index: 1; 
-  overflow: hidden;
-}
-
-.leftContent {
-  flex-basis: 50%;
+.heroSection {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding-right: 50px; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
   z-index: 2;
 }
 
-.title {
-  font-size: clamp(3rem, 8vw, 6rem);
-  font-weight: 900;
-  margin-bottom: 20px;
-  color: #2c3e50;
-  line-height: 1.1;
+.heroContent {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  border-radius: 20px;
+  max-width: 900px;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
-.titleOutline {
-  color: transparent;
-  -webkit-text-stroke: 2px #2c3e50;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.subtitle {
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
-  margin-bottom: 10px;
-  color: #34495e;
-  line-height: 1.4;
+.heroTitle {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 2px;
 }
 
-/* Removed old .scrollDownContainer and .scrollDownArrow styles */
+.heroSubtitle {
+  font-size: 1.8rem;
+  margin: 20px 0 40px;
+  font-weight: 300;
+}
 
-@keyframes scrollAnim {
-  0% {
-    opacity: 1;
+.scrollButton {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scrollButton:hover {
+  background-color: white;
+  color: #333;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
   }
-  50% {
-    opacity: 1;
-    transform: translateY(8px); /* Adjust distance of scroll animation */
+  40% {
+    transform: translateY(-10px);
   }
-  100% {
-    opacity: 0;
-    transform: translateY(12px);
+  60% {
+    transform: translateY(-5px);
   }
 }
 
-.scrollIndicatorContainer {
-  position: absolute; /* Position relative to leftContent or heroContainer */
-  bottom: 40px; /* Adjust as needed from the bottom */
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 5; /* Ensure it's above other elements if necessary */
-  /* The following styles were for the old blue container, removing them */
-  /* width: 60px; */
-  /* height: 90px; */
-  /* background-color: #3498db; */
-  /* border-radius: 30px; */
-  /* cursor: pointer; */ 
-  /* transition: background-color 0.3s ease; */
-}
-
-/* .scrollIndicatorContainer:hover {
-  background-color: #2980b9; Removed hover effect from container 
-} */
-
-.mouseOutline {
-  width: 22px; /* Width of the mouse outline */
-  height: 36px; /* Height of the mouse outline */
-  border: 2px solid #fff; /* White outline */
-  border-radius: 12px; /* Rounded corners for mouse shape */
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* Align dot to the top initially */
-  padding-top: 6px; /* Space for the dot to move from top */
-}
-
-.mouseScrollDot {
-  width: 5px; /* Width of the scroll dot */
-  height: 5px; /* Height of the scroll dot */
-  background-color: #fff; /* White dot */
-  border-radius: 50%;
-  opacity: 1;
-  animation: scrollAnim 1.8s infinite ease-out;
-}
-
-.scrollIndicatorText {
-  margin-top: 10px;
-  color: #fff; /* White text */
-  font-size: 0.75rem; /* Small text size */
-  font-weight: 300;
-  letter-spacing: 0.5px;
-}
-
-.socialLinks {
-  margin-top: 40px;
-  display: flex;
-  align-items: center;
-  color: #7f8c8d;
-  font-size: 0.9rem;
-}
-
-.socialLinks span {
-  margin-right: 15px;
-}
-
-.socialIcon {
-  color: #7f8c8d;
-  text-decoration: none;
-  margin-right: 15px;
-  font-size: 1.2rem; /* Adjusted for better visual balance with text */
-  border: 1px solid #bdc3c7;
-  border-radius: 50%;
-  width: 35px; /* Slightly larger */
-  height: 35px; /* Slightly larger */
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
-}
-
-.socialIcon:hover {
-  color: #fff;
-  background-color: #3498db;
-  border-color: #3498db;
-}
-
-.rightContent {
-  /* flex-basis: 50%; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative; 
-  z-index: 1;
-}
-
-.characterImageContainer {
-  position: absolute;
-  right: 5%; /* Adjust based on visual preference */
-  bottom: 0;
-  width: auto;
-  max-width: 65%; /* Adjust based on image aspect ratio and desired size */
-  max-height: 85vh;
-  z-index: 1;
-}
-
-.characterImage {
-  width: 100%;
-  height: 100%;
-  max-height: 85vh;
-  object-fit: contain;
-  display: block;
-}
-
-.quickLinks {
-  display: flex;
-  flex-direction: column;
-  gap: 15px; 
-  position: absolute;
-  right: max(5%, 40px); /* Ensure some padding from edge */
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  background-color: rgba(255, 255, 255, 0.05); /* Very subtle background */
-  padding: 20px;
-  border-radius: 15px;
-  backdrop-filter: blur(5px); /* Frosted glass effect if supported */
-}
-
-@media (max-width: 1024px) {
-  .heroContainer {
-    flex-direction: column;
-    text-align: center;
-    padding: 30px 20px;
-  }
-
-  .leftContent {
-    align-items: center;
-    padding-right: 0;
-    margin-bottom: 40px;
-    flex-basis: auto;
-  }
-
-  .rightContent {
-    flex-basis: auto;
-    width: 100%;
-    margin-top: 30px;
-    justify-content: center;
-    min-height: 40vh; /* Ensure space for image and links */
-  }
-  
-  .characterImageContainer {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    max-width: 70%;
-    margin: 0 auto 30px auto;
-  }
-
-  .quickLinks {
-    position: relative;
-    right: auto;
-    top: auto;
-    transform: none;
-    margin: 0 auto;
-    align-items: center;
-    background-color: transparent;
-    padding: 0;
-    backdrop-filter: none;
-  }
-
-  .title {
-    font-size: clamp(2.5rem, 7vw, 4.5rem);
-  }
-
-  .subtitle {
-    font-size: clamp(1.2rem, 3.5vw, 1.8rem);
-  }
-}
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  /* Adjustments for scroll indicator on smaller screens if needed */
-  .scrollIndicatorContainer {
-    bottom: 20px; /* Closer to bottom on mobile */
+  .heroTitle {
+    font-size: 3rem;
   }
-  .mouseOutline {
-    width: 20px;
-    height: 32px;
-    border-radius: 10px;
+  .heroSubtitle {
+    font-size: 1.3rem;
   }
-  .mouseScrollDot {
-    width: 4px;
-    height: 4px;
-  }
-  .scrollIndicatorText {
-    font-size: 0.7rem;
-  }
-  /* Removed old responsive styles for .scrollDownContainer and .scrollDownArrow */
-
-  .socialLinks {
-    margin-top: 30px;
-  }
-  .quickLinks {
-    width: 100%;
-    max-width: 300px;
-  }
-  .characterImageContainer {
-    max-width: 80%;
+  .scrollButton {
+    padding: 12px 25px;
+    font-size: 1rem;
   }
 }

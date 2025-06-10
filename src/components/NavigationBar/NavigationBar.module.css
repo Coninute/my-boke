@@ -1,7 +1,7 @@
 @import "./font/iconfont.css";
 
 :root {
-  --nav-height: 60px;
+  --nav-height: 80px;
   --nav-padding-x: 20px;
   --nav-link-hover-bg: rgba(0, 0, 0, 0.05);
   --nav-text-color: #333;
@@ -37,7 +37,8 @@
   width: 100%;
   z-index: 1000;
   box-sizing: border-box;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  /* 更新 transition 以包含 transform */
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease-in-out;
   color: var(--nav-text-color);
 }
 
@@ -162,7 +163,7 @@
 .themeSwitch {
   display: flex; 
   align-items: center;
-  width: 120px;
+  width: 84px; /* Final attempt at increasing width for text */
   height: 30px; 
   border-radius: 15px; /* height / 2 */
   background-color: #E5E7EB; /* Light mode switch body (gray-200) */
@@ -193,7 +194,7 @@
   position: absolute; 
   top: 50%;
   /* Initial position: (switch_height - slider_height) / 2 from edge */
-  left: calc((30px - 22px) / 2); /* Should be 4px */
+  left: 4px; /* Consistent offset */
   transform: translateY(-50%);
   /* Elastic transition for sliding effect */
   transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), color 0.3s ease;
@@ -201,40 +202,57 @@
 }
 
 .themeSwitch.darkModeActive .iconSlider {
-  /* Distance to translate: switch_width - slider_width - 2 * slider_margin_from_edge */
-  /* slider_margin_from_edge = (30px - 22px) / 2 = 4px */
-  /* Translate distance = 120px - 22px - (2 * 4px) = 120 - 22 - 8 = 90px */
-  transform: translateX(calc(120px - 22px - 2 * ((30px - 22px) / 2))) translateY(-50%);
+  transform: translateX(54px) translateY(-50%); /* Adjusted for new switch width (84px) */
   color: #F59E0B; /* Sun color (amber-500) */
 }
 
 .themeText {
   flex-grow: 1; /* Takes up available space in the flex container */
-  font-size: 0.6rem; 
-  font-weight: 700; 
+  font-size: 0.35rem; /* Further reduce font size to fit text */
+  font-weight: 600; /* 减小字重 */ 
   line-height: 1; /* Ensure text fits vertically */
   color: #4B5563; /* Text color for light mode (gray-600) */
   transition: color 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.5px; /* 调整负字符间距 */
   text-align: center; /* Center text in its available space */
   /* Padding will create space for the icon */
+  overflow: hidden; /* Required for text-overflow */
+  white-space: nowrap; /* Required for text-overflow */
+  text-overflow: ellipsis; /* Add ellipsis if text overflows */
+  max-width: 48px; /* Sensible max-width for testing with display: block */
+  display: block; /* Ensure block behavior for overflow properties */
 }
 
 [data-theme='dark'] .themeText {
-  color: #D1D5DB; /* Text color for dark mode (gray-300) */
+  color: #E5E7EB; /* gray-200 for text in dark mode */
 }
 
 /* Light Mode: Text is to the right of icon. Icon area on left is approx 4px margin + 22px width = 26px */
 .themeSwitch:not(.darkModeActive) .themeText {
-  padding-left: calc(22px + 4px); /* Space for icon (width + left_offset_of_icon) */
-  padding-right: 4px; /* Small padding on the other side */
+  padding-left: 28px; /* Space for icon (4px margin + 22px width + 2px gap) */
+  padding-right: 4px; /* Standard outer padding for text */
 }
 
 /* Dark Mode: Text is to the left of icon. Icon area on right is approx 22px width + 4px margin = 26px */
 .themeSwitch.darkModeActive .themeText {
-  padding-right: calc(22px + 4px); /* Space for icon (width + right_offset_of_icon) */
-  padding-left: 4px; /* Small padding on the other side */
+  padding-left: 4px; /* Standard outer padding for text */
+  padding-right: 28px; /* Space for icon (2px gap + 22px width + 4px margin) */
+}
+
+/* 新增：用于隐藏导航栏的类 */
+.navbarHidden {
+  transform: translateY(-100%); /* 将导航栏向上移出视口 */
+}
+
+/* 新增：用于导航栏非置顶时显示纯色背景的类 */
+.navbarSolid {
+  background-color: #ffffff; /* 亮色主题下的纯白背景 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 稍微明显的阴影 */
+}
+
+/* 暗色主题下的纯色背景 */
+[data-theme='dark'] .navbarSolid {
+  background-color: var(--search-input-bg); /* 使用现有暗色变量，或指定新颜色如 #1f1f1f */
 }
 
 /* Responsive adjustments */

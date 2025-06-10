@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { create } from 'danmu'; // Make sure 'danmu' is installed
 import styles from './index.module.css';
+import VantaBackground from '../../components/VantaBackground'; // 导入新的背景组件
 
 const MessageWallPage = () => {
   const danmuContainerRef = useRef(null);
@@ -194,6 +195,7 @@ const MessageWallPage = () => {
 
   return (
     <div className={styles.messageWallPageContainer}>
+      <VantaBackground />
       <h1 className={styles.title}>弹幕留言墙</h1>
       <div ref={danmuContainerRef} className={styles.danmuContainer}>
         {/* Danmaku will be rendered here by danmu.js */}

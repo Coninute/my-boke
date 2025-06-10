@@ -1,8 +1,8 @@
 .nav {
-    /* Styles for the main navigation container, if any, can go here */
-    /* The actual fixed positioning is handled by NavigationBar.module.css */
-    /* We can remove fixed positioning from here if NavigationBar handles it entirely */
-    /* For now, let's ensure it doesn't conflict by placing it at the top */
-    position: relative; /* Or static, if it's just a wrapper */
-    z-index: 1000; /* Ensure it's above other content if it has a background */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000; 
 }
