@@ -16,13 +16,23 @@
   display: flex;
   gap: 20px;
   padding: 20px;
+  padding-top: 40px;
   max-width: 1600px;
   margin: 0 auto;
+  /* 允许列根据自身高度展开，配合 sticky */
+  align-items: flex-start;
 }
 
 .leftColumn {
   width: 300px;
   flex-shrink: 0;
+  /* 使左侧列在滚动时固定，可自行调整顶部间距 */
+  position: sticky;
+  top: 100px;
+  /* 让列根据内容高度自适应，避免占据整个主轴高度 */
+  align-self: flex-start;
+  /* 触发 sticky 的滚动计算 */
+  height: max-content;
 }
 
 .rightColumn {

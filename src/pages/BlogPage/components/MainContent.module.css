@@ -18,11 +18,18 @@
   padding: 20px;
   max-width: 1600px;
   margin: 0 auto;
+  /* 使子列按自身高度对齐顶部，配合 sticky */
+  align-items: flex-start;
 }
 
 .leftColumn {
   width: 300px;
   flex-shrink: 0;
+  /* 粘性定位 */
+  position: sticky;
+  top: 100px; /* 顶部间距可自行调整 */
+  height: max-content;
+  align-self: flex-start;
 }
 
 .rightColumn {
@@ -224,4 +231,3 @@
   background-color: #3b82f6;
   color: white;
 }
-

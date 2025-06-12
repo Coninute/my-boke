@@ -2,7 +2,8 @@
   position: relative;
   min-height: 100vh;
   width: 100%;
-  overflow: hidden;
+  /* 允许浏览器窗口滚动，确保 sticky 正常工作 */
+  overflow: visible;
 }
 
 .vantaBox {
@@ -17,9 +18,8 @@
 .scrollBox {
   position: relative; /* 添加 position: relative 以便 z-index 生效 */
   z-index: 2; /* 将 z-index 设为 2，使其在 .vantaBox 之上 */
-  height: 100%;
-  overflow-y: auto;
-  padding: 80px 20px 20px; /* Add padding top to avoid overlap with nav bar */
+  /* 让浏览器窗口负责滚动，以便 sticky 正常工作 */
+  padding: 80px 20px 20px; /* 顶部留白避免与导航重叠 */
   box-sizing: border-box;
 }
 
@@ -30,4 +30,3 @@
   max-width: 1400px;
   margin: 0 auto;
 }
-
