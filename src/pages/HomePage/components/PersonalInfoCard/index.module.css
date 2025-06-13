@@ -1,0 +1,62 @@
+.card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 36px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 16px;
+  object-fit: cover;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.title {
+  font-size: 17px;
+  color: #666;
+  margin: 0;
+}
+
+.bio {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.socialLinks a {
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.socialLinks a:hover {
+  color: #007bff;
+}

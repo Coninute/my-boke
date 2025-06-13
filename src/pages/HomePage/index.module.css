@@ -1,7 +1,37 @@
 .homePage {
-  width: 100%;
-  height: auto;
+  position: relative;
+  color: #333;
 }
+
+.topSection {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.mainContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 4%;
+  max-width: 1600px;
+  width: 100%;
+  z-index: 1;
+}
+
+.otherContent {
+  padding: 40px 0;
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .scrollBox {
   position: relative; /* Ensure it's a positioning context */
   z-index: 2; /* Higher z-index to be on top of the background */
