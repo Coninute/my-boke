@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './MainContent.module.css';
+import styles from '../MainContent/MainContent.module.css';  
 import { FaHeart } from 'react-icons/fa';
 
 function ProjectCard({ project }) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './MainContent.module.css';
+import styles from '../MainContent/MainContent.module.css';
 import { FaThumbtack, FaClock } from 'react-icons/fa';
 
 function ArticleCard({ article }) {

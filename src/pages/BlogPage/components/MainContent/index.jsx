@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './MainContent.module.css';
-import UserProfileCard from './UserProfileCard';
-import WeatherCard from './WeatherCard';
-import TagsCard from './TagsCard';
-import ArticleCard from './ArticleCard';
-import { articles } from '../blogData'; // 从 blogData.js 导入文章数据
+import UserProfileCard from '@/components/BlogComponemts/UserProfileCard';
+import WeatherCard from '@/components/BlogComponemts/WeatherCard';
+import TagsCard from '@/components/BlogComponemts/TagsCard';
+import ArticleCard from '../ArticleCard';
+import { articles } from '../../blogData'; // 从 blogData.js 导入文章数据
 
 function MainContent({ articles }) {
   return (

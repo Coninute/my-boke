@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './MainContent.module.css';
-import UserProfileCard from './UserProfileCard';
-import WeatherCard from './WeatherCard';
-import TagsCard from './TagsCard';
-import ProjectCard from './ProjectCard';
+import UserProfileCard from '@/components/BlogComponemts/UserProfileCard';
+import WeatherCard from '@/components/BlogComponemts/WeatherCard';
+import TagsCard from '@/components/BlogComponemts/TagsCard';
+import ProjectCard from '../ProjectCard';
 
 function MainContent({ projects }) {
   return (

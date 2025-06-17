@@ -1,0 +1,233 @@
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.mainContentContainer {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  /* 使子列按自身高度对齐顶部，配合 sticky */
+  align-items: flex-start;
+}
+
+.leftColumn {
+  width: 300px;
+  flex-shrink: 0;
+  /* 粘性定位 */
+  position: sticky;
+  top: 100px; /* 顶部间距可自行调整 */
+  height: max-content;
+  align-self: flex-start;
+}
+
+.rightColumn {
+  flex-grow: 1;
+}
+
+/* UserProfileCard Styles */
+.profileHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.profileName {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.profileBio {
+  margin: 0;
+  color: #666;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.statItem strong {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.statItem span {
+  color: #666;
+}
+
+.profileButton {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profileButton:hover {
+  background-color: #2563eb;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.socialLinks a {
+  color: #666;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.socialLinks a:hover {
+  color: #333;
+}
+
+/* ArticleCard Styles */
+.articleCard {
+  display: flex;
+  gap: 20px;
+}
+
+.articleImage {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.articleContent {
+  flex-grow: 1;
+}
+
+.articleTitle {
+  margin: 0 0 10px 0;
+}
+
+.articleMeta {
+  margin-bottom: 10px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #eef2f7;
+  color: #3b82f6;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  margin-right: 8px;
+}
+
+.pinnedTag {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.articleSummary {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.articleFooter {
+  margin-top: 15px;
+  color: #999;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* WeatherCard Styles */
+.weatherCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.weatherInfo {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.temperature {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-right: 15px;
+  line-height: 1;
+}
+
+.dateLocation {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.weatherExtra {
+  display: flex;
+  align-items: center;
+}
+
+.weatherIcon {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.weatherLocation {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+
+/* TagsCard Styles */
+.cardTitle {
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
+}
+
+.tagsCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tagItem {
+  padding: 6px 12px;
+  background-color: #f3f4f6;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tagItem:hover {
+  background-color: #3b82f6;
+  color: white;
+}
