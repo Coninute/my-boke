@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../MainContent.module.css';
+import styles from './WeatherCard.module.css';
 
 function WeatherCard() {
   return (

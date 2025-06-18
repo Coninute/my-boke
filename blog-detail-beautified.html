@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>博客详情 - 个人博客</title>
+  <!-- 引入Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 引入Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <!-- Tailwind配置 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3ca8ff',
+            secondary: '#6ccfff',
+            accent: '#2980b9',
+            neutral: '#f0f9ff',
+            dark: '#333333',
+            medium: '#555555',
+            light: '#999999',
+            lighter: '#eeeeee'
+          },
+          fontFamily: {
+            sans: ['Microsoft YaHei', 'sans-serif'],
+          },
+          boxShadow: {
+            'card': '0 2px 8px rgba(0, 0, 0, 0.1)',
+            'hover': '0 4px 12px rgba(0, 0, 0, 0.15)',
+          }
+        },
+      }
+    }
+  </script>
+  
+  <!-- 自定义工具类 -->
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+      .gradient-bg {
+        background: linear-gradient(to right bottom, #e0f3ff, #f9fafc);
+      }
+      .nav-gradient {
+        background: linear-gradient(to right, #6ccfff, #3ca8ff);
+      }
+      .tag-hover {
+        @apply transition-all duration-300 hover:bg-primary hover:text-white;
+      }
+      .btn-primary {
+        @apply bg-primary text-white py-2 px-4 rounded-md transition-all duration-300 hover:bg-accent;
+      }
+      .card-hover {
+        @apply transition-all duration-300 hover:shadow-hover;
+      }
+    }
+  </style>
+</head>
+
+<body class="gradient-bg min-h-screen">
+  <!-- 顶部导航 -->
+  <nav class="nav-gradient sticky top-0 z-50 shadow-md">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <i class="fa fa-pencil-square-o text-white text-2xl"></i>
+        <span class="text-white font-bold text-xl">QYN</span>
+      </div>
+      
+      <!-- 桌面导航 -->
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="index.html" class="text-white hover:text-gray-200 transition-colors">个人主页</a>
+        <a href="blog.html" class="text-white bg-accent/20 px-3 py-1 rounded-md">个人博客</a>
+        <a href="project.html" class="text-white hover:text-gray-200 transition-colors">个人项目</a>
+        <a href="ai.html" class="text-white hover:text-gray-200 transition-colors">AI智问</a>
+        <a href="contact.html" class="text-white hover:text-gray-200 transition-colors">联系博主</a>
+        <a href="message.html" class="text-white hover:text-gray-200 transition-colors">留言墙</a>
+      </div>
+      
+      <!-- 移动端菜单按钮 -->
+      <button class="md:hidden text-white text-xl">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 主体内容 -->
+  <main class="container mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8">
+    <!-- 侧边栏 -->
+    <aside class="lg:w-1/4 space-y-6">
+      <!-- 个人资料卡片 -->
+      <div class="bg-white rounded-xl shadow-card p-6 card-hover">
+        <div class="flex flex-col items-center">
+          <img src="https://picsum.photos/seed/avatar/120/120" alt="博主头像" class="w-24 h-24 rounded-full object-cover border-4 border-primary/20 mb-4">
+          <h2 class="text-xl font-bold text-dark mb-1">庆</h2>
+          <p class="text-light text-sm italic">世界等同于你</p>
+          
+          <div class="flex mt-4 space-x-4">
+            <a href="#" class="text-primary hover:text-accent transition-colors"><i class="fa fa-github text-xl"></i></a>
+            <a href="#" class="text-primary hover:text-accent transition-colors"><i class="fa fa-twitter text-xl"></i></a>
+            <a href="#" class="text-primary hover:text-accent transition-colors"><i class="fa fa-linkedin text-xl"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 标签云 -->
+      <div class="bg-white rounded-xl shadow-card p-6 card-hover">
+        <h3 class="text-lg font-bold text-dark mb-4 flex items-center">
+          <i class="fa fa-tags text-primary mr-2"></i>标签云
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-neutral text-primary px-3 py-1 rounded-full text-sm tag-hover">koa</span>
+          <span class="bg-neutral text-primary px-3 py-1 rounded-full text-sm tag-hover">typescript</span>
+          <span class="bg-neutral text-primary px-3 py-1 rounded-full text-sm tag-hover">echarts</span>
+          <span class="bg-neutral text-primary px-3 py-1 rounded-full text-sm tag-hover">vue</span>
+          <span class="bg-neutral text-primary px-3 py-1 rounded-full text-sm tag-hover">node</span>
+          <span class="bg-neutral text-primary px-3 py-1 rounded-full text-sm tag-hover">博客搭建</span>
+        </div>
+      </div>
+      
+      <!-- 最新文章 -->
+      <div class="bg-white rounded-xl shadow-card p-6 card-hover">
+        <h3 class="text-lg font-bold text-dark mb-4 flex items-center">
+          <i class="fa fa-newspaper-o text-primary mr-2"></i>最新文章
+        </h3>
+        <ul class="space-y-3">
+          <li class="border-b border-lighter pb-3">
+            <a href="#" class="text-dark hover:text-primary transition-colors font-medium">Node.js 性能优化实战指南</a>
+            <p class="text-light text-xs mt-1">2025-06-10</p>
+          </li>
+          <li class="border-b border-lighter pb-3">
+            <a href="#" class="text-dark hover:text-primary transition-colors font-medium">Vue3 + TypeScript 项目实战</a>
+            <p class="text-light text-xs mt-1">2025-06-05</p>
+          </li>
+          <li>
+            <a href="#" class="text-dark hover:text-primary transition-colors font-medium">ECharts 数据可视化技巧分享</a>
+            <p class="text-light text-xs mt-1">2025-05-28</p>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    
+    <!-- 文章内容 -->
+    <article class="lg:w-3/4 bg-white rounded-xl shadow-card p-8">
+      <header class="mb-8">
+        <h1 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-dark mb-3 leading-tight">
+          Node项目使用log4js进行日志记录
+        </h1>
+        
+        <div class="flex flex-wrap items-center gap-4 text-light text-sm mb-6">
+          <span class="flex items-center"><i class="fa fa-calendar-o mr-1"></i> 2022-09-11 06:57:00</span>
+          <span class="flex items-center"><i class="fa fa-folder-o mr-1"></i> Node.js</span>
+          <span class="flex items-center"><i class="fa fa-tags mr-1"></i> node, koa</span>
+          <span class="flex items-center"><i class="fa fa-eye mr-1"></i> 1,248 阅读</span>
+          <span class="flex items-center"><i class="fa fa-comments-o mr-1"></i> 8 评论</span>
+        </div>
+        
+        <div class="w-full h-px bg-lighter mb-8"></div>
+      </header>
+      
+      <div class="prose prose-lg max-w-none">
+        <p class="lead text-lg text-medium mb-6">
+          在Node.js项目中，日志记录是一个重要的环节，它可以帮助我们追踪应用程序的运行状态、排查问题以及监控系统性能。本文将详细介绍如何在Node项目中使用log4js进行高效的日志管理。
+        </p>
+        
+        <h2 class="text-2xl font-bold text-dark mt-8 mb-4">安装与配置</h2>
+        <p>
+          目前log4js的最新版本是6.6.1，我们可以通过npm进行安装：
+        </p>
+        
+        <div class="bg-gray-50 rounded-lg p-4 my-6 overflow-x-auto">
+          <code class="text-sm font-mono">npm install log4js --save</code>
+        </div>
+        
+        <p>
+          log4js的日志默认从info级别开始，日志内容由时间、级别和具体信息组成。log4js可配置的级别一共有九个，下面是一个级别参考图：
+        </p>
+        
+        <figure class="my-8">
+          <img src="https://picsum.photos/seed/log4js/800/400" alt="log4js级别示意图" class="w-full h-auto rounded-lg shadow-sm">
+          <figcaption class="text-center text-light text-sm mt-2">log4js日志级别优先级</figcaption>
+        </figure>
+        
+        <h2 class="text-2xl font-bold text-dark mt-8 mb-4">基本使用</h2>
+        <p>
+          在项目中引入log4js并进行基本配置：
+        </p>
+        
+        <div class="bg-gray-50 rounded-lg p-4 my-6 overflow-x-auto">
+          <pre class="text-sm font-mono">
+const log4js = require('log4js');
+
+log4js.configure({
+  appenders: {
+    console: { type: 'console' },
+    file: { type: 'file', filename: 'app.log' }
+  },
+  categories: {
+    default: { appenders: ['console', 'file'], level: 'info' }
+  }
+});
+
+const logger = log4js.getLogger();
+
+// 使用不同级别的日志
+logger.trace('Entering cheese testing');
+logger.debug('Got cheese.');
+logger.info('Cheese is Gouda.');
+logger.warn('Cheese is quite smelly.');
+logger.error('Cheese is too ripe!');
+logger.fatal('Cheese was breeding ground for listeria.');
+          </pre>
+        </div>
+        
+        <h2 class="text-2xl font-bold text-dark mt-8 mb-4">高级配置</h2>
+        <p>
+          对于生产环境，我们通常需要更复杂的配置，例如按日期分割日志文件：
+        </p>
+        
+        <div class="bg-gray-50 rounded-lg p-4 my-6 overflow-x-auto">
+          <pre class="text-sm font-mono">
+log4js.configure({
+  appenders: {
+    console: { type: 'console' },
+    dateFile: {
+      type: 'dateFile',
+      filename: 'logs/app.log',
+      pattern: '-yyyy-MM-dd',
+      compress: true
+    }
+  },
+  categories: {
+    default: { appenders: ['console', 'dateFile'], level: 'info' },
+    error: { appenders: ['dateFile'], level: 'error' }
+  }
+});
+          </pre>
+        </div>
+        
+        <h2 class="text-2xl font-bold text-dark mt-8 mb-4">结合Koa框架使用</h2>
+        <p>
+          在Koa应用中集成log4js中间件：
+        </p>
+        
+        <div class="bg-gray-50 rounded-lg p-4 my-6 overflow-x-auto">
+          <pre class="text-sm font-mono">
+const Koa = require('koa');
+const app = new Koa();
+const log4js = require('log4js');
+
+// 配置log4js
+log4js.configure({
+  appenders: {
+    access: { type: 'dateFile', filename: 'logs/access.log' },
+    app: { type: 'file', filename: 'logs/app.log' },
+    errorFile: { type: 'file', filename: 'logs/errors.log' }
+  },
+  categories: {
+    default: { appenders: ['app'], level: 'info' },
+    access: { appenders: ['access'], level: 'info' },
+    error: { appenders: ['errorFile'], level: 'error' }
+  }
+});
+
+// 创建日志中间件
+const logger = log4js.getLogger('app');
+const accessLogger = log4js.getLogger('access');
+
+// 记录HTTP请求
+app.use(log4js.connectLogger(accessLogger, { level: 'auto' }));
+
+// 应用中间件
+app.use(async (ctx, next) => {
+  try {
+    await next();
+  } catch (err) {
+    logger.error(err);
+    ctx.status = err.statusCode || 500;
+    ctx.body = { error: err.message };
+  }
+});
+
+app.listen(3000);
+          </pre>
+        </div>
+        
+        <h2 class="text-2xl font-bold text-dark mt-8 mb-4">常见问题与解决方案</h2>
+        <p>
+          在使用log4js过程中，我们可能会遇到一些问题，下面是一些常见问题及解决方案：
+        </p>
+        
+        <ol class="list-decimal pl-5 my-6 space-y-3">
+          <li>
+            <strong>日志文件过大</strong>：可以配置文件大小分割或日期分割策略
+          </li>
+          <li>
+            <strong>多进程应用日志混乱</strong>：使用cluster模式时需要特殊配置
+          </li>
+          <li>
+            <strong>性能问题</strong>：避免在高并发场景下使用同步写入方式
+          </li>
+        </ol>
+        
+        <blockquote class="border-l-4 border-primary pl-4 italic my-8 text-medium">
+          日志记录是系统监控和问题排查的重要工具，合理使用log4js可以帮助我们更好地管理应用程序的运行状态。
+        </blockquote>
+      </div>
+      
+      <!-- 文章底部信息 -->
+      <div class="mt-12 pt-6 border-t border-lighter">
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+            <i class="fa fa-tag mr-1"></i> node
+          </span>
+          <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+            <i class="fa fa-tag mr-1"></i> koa
+          </span>
+          <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+            <i class="fa fa-tag mr-1"></i> log4js
+          </span>
+        </div>
+        
+        <div class="flex justify-between items-center">
+          <div class="flex space-x-4">
+            <button class="flex items-center text-light hover:text-primary transition-colors">
+              <i class="fa fa-thumbs-o-up mr-1"></i> 点赞 (24)
+            </button>
+            <button class="flex items-center text-light hover:text-primary transition-colors">
+              <i class="fa fa-bookmark-o mr-1"></i> 收藏
+            </button>
+            <button class="flex items-center text-light hover:text-primary transition-colors">
+              <i class="fa fa-share-alt mr-1"></i> 分享
+            </button>
+          </div>
+          
+          <div class="flex items-center space-x-2">
+            <img src="https://picsum.photos/seed/author/40/40" alt="作者头像" class="w-8 h-8 rounded-full">
+            <span class="text-sm text-medium">作者：庆</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 评论区 -->
+      <section class="mt-12 pt-8 border-t border-lighter">
+        <h3 class="text-xl font-bold text-dark mb-6 flex items-center">
+          <i class="fa fa-comments-o text-primary mr-2"></i>评论区 (8)
+        </h3>
+        
+        <!-- 评论列表 -->
+        <div class="space-y-6 mb-8">
+          <!-- 评论项 -->
+          <div class="flex gap-4">
+            <img src="https://picsum.photos/seed/user1/48/48" alt="用户头像" class="w-10 h-10 rounded-full">
+            <div class="flex-1">
+              <div class="bg-gray-50 rounded-lg p-4">
+                <div class="flex justify-between items-center mb-2">
+                  <h4 class="font-medium text-dark">游客1</h4>
+                  <span class="text-xs text-light">2022-09-15 14:30</span>
+                </div>
+                <p class="text-medium">
+                  这篇关于log4js的文章很实用，解决了我在node项目里日志记录的困惑，期待更多干货！
+                </p>
+              </div>
+              <div class="flex justify-end mt-2">
+                <button class="text-sm text-light hover:text-primary transition-colors">
+                  <i class="fa fa-reply mr-1"></i> 回复
+                </button>
+              </div>
+              
+              <!-- 回复项 -->
+              <div class="flex gap-3 mt-4 ml-8">
+                <img src="https://picsum.photos/seed/author/40/40" alt="作者头像" class="w-8 h-8 rounded-full">
+                <div class="flex-1">
+                  <div class="bg-gray-50 rounded-lg p-4">
+                    <div class="flex justify-between items-center mb-2">
+                      <h4 class="font-medium text-dark">庆 <span class="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded">作者</span></h4>
+                      <span class="text-xs text-light">2022-09-16 09:15</span>
+                    </div>
+                    <p class="text-medium">
+                      感谢支持～后续会分享更多开发实践，有问题欢迎随时交流～
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 评论项 -->
+          <div class="flex gap-4">
+            <img src="https://picsum.photos/seed/user2/48/48" alt="用户头像" class="w-10 h-10 rounded-full">
+            <div class="flex-1">
+              <div class="bg-gray-50 rounded-lg p-4">
+                <div class="flex justify-between items-center mb-2">
+                  <h4 class="font-medium text-dark">张三</h4>
+                  <span class="text-xs text-light">2022-09-13 16:42</span>
+                </div>
+                <p class="text-medium">
+                  请问在集群模式下如何配置log4js才能避免日志冲突？
+                </p>
+              </div>
+              <div class="flex justify-end mt-2">
+                <button class="text-sm text-light hover:text-primary transition-colors">
+                  <i class="fa fa-reply mr-1"></i> 回复
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 评论表单 -->
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h4 class="text-lg font-medium text-dark mb-4">发表评论</h4>
+          <form id="commentForm">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+              <div>
+                <label for="name" class="block text-sm font-medium text-medium mb-1">昵称</label>
+                <input type="text" id="name" class="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="请输入昵称" required>
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-medium mb-1">邮箱</label>
+                <input type="email" id="email" class="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="请输入邮箱" required>
+              </div>
+              <div>
+                <label for="website" class="block text-sm font-medium text-medium mb-1">网站</label>
+                <input type="url" id="website" class="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="请输入网站(选填)">
+              </div>
+            </div>
+            <div class="mb-4">
+              <label for="comment" class="block text-sm font-medium text-medium mb-1">评论内容</label>
+              <textarea id="comment" rows="4" class="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors resize-none" placeholder="请输入评论内容..." required></textarea>
+            </div>
+            <div class="flex justify-end">
+              <button type="submit" class="btn-primary flex items-center">
+                <i class="fa fa-paper-plane mr-2"></i> 提交评论
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white py-10 mt-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-lg font-bold mb-4 flex items-center">
+            <i class="fa fa-pencil-square-o mr-2"></i> QYN
+          </h3>
+          <p class="text-gray-400 mb-4">
+            分享技术，记录成长，一起探索前端与后端的无限可能。
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-github text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-twitter text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-linkedin text-xl"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">快速链接</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">个人主页</a></li>
+            <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">个人博客</a></li>
+            <li><a href="project.html" class="text-gray-400 hover:text-white transition-colors">个人项目</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">联系博主</a></li>
+            <li><a href="message.html" class="text-gray-400 hover:text-white transition-colors">留言墙</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">订阅更新</h3>
+          <p class="text-gray-400 mb-4">
+            订阅我的博客，获取最新技术文章和项目更新。
+          </p>
+          <form class="flex">
+            <input type="email" placeholder="你的邮箱地址" class="px-4 py-2 rounded-l-md focus:outline-none text-dark flex-1">
+            <button type="submit" class="bg-primary hover:bg-accent transition-colors px-4 py-2 rounded-r-md">
+              <i class="fa fa-envelope-o"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 QYN 个人博客. 保留所有权利.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // 评论表单提交
+    document.getElementById('commentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const website = document.getElementById('website').value;
+      const comment = document.getElementById('comment').value;
+      
+      // 这里应该发送AJAX请求到后端处理评论
+      // 模拟成功提交
+      setTimeout(() => {
+        alert('评论提交成功！审核通过后将显示。');
+        this.reset();
+      }, 800);
+    });
+    
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function() {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 10) {
+        nav.classList.add('shadow-md');
+      } else {
+        nav.classList.remove('shadow-md');
+      }
+    });
+  </script>
+</body>
+
+</html>  

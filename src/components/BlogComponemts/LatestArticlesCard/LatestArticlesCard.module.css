@@ -1,0 +1,58 @@
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 28px 24px 16px 24px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.icon {
+  color: #3b82f6;
+  font-size: 1.3rem;
+  margin-right: 8px;
+}
+
+.title {
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.articleList {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.articleItem {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+}
+
+.articleTitle {
+  font-size: 1rem;
+  color: #23272e;
+  margin-bottom: 3px;
+}
+
+.articleDate {
+  font-size: 0.92rem;
+  color: #b2b2b2;
+  margin-bottom: 2px;
+}
+
+.divider {
+  border-bottom: 1px solid #f0f0f0;
+  margin: 8px 0 0 0;
+  width: 100%;
+}

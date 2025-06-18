@@ -1,0 +1,50 @@
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 28px 24px 20px 24px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.cardTitle::before {
+  content: '\1F3F7'; /* 标签icon */
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 1.25rem;
+  color: #3b82f6;
+}
+
+.tagsCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 14px;
+}
+
+.tagItem {
+  background: #e3f0fd;
+  color: #3b82f6;
+  font-size: 1rem;
+  padding: 4px 16px;
+  border-radius: 16px;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tagItem:hover {
+  background: #b4d7fa;
+  color: #2563eb;
+}

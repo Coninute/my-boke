@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import BlogPage from '../pages/BlogPage';
+import BlogDetail from '../pages/BlogPage/components/BlogDetail';
 import ProjectsPage from '../pages/ProjectsPage';
 import AIQueryPage from '../pages/AIQueryPage';
 import ContactPage from '../pages/ContactPage';
@@ -16,6 +17,7 @@ function AppRouter() {
       <Route path="/ai-query" element={<AIQueryPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/message-wall" element={<MessageWallPage />} />
+      <Route path="/blog1" element={<BlogDetail />} />
       <Route path="*" element={<NotFoundPage />} /> {/* 添加 404 路由 */}
     </Routes>
   );

@@ -1,0 +1,240 @@
+.blogDetail {
+    width: 100%;
+    height: 100vh; /* 恢复高度，使其占满整个视口 */
+    position: relative; /* 恢复相对定位，作为内部元素的定位上下文 */
+    overflow: hidden;
+}
+
+.vantaBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.scrollBox {
+    position: relative;
+    left: 50%; /* 使内部元素水平居中 */
+    transform: translateX(-50%); /* 使内部元素水平居中 */
+    z-index: 1;
+    width: 1600px;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    /* 顶部内边距为导航栏预留空间，左右和底部保持不变 */
+    padding-top: 100px; 
+    box-sizing: border-box;
+}
+
+/* 美化滚动条 */
+.scrollBox::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollBox::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.scrollBox::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.left {
+    width: 300px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* --- 粘性定位，实现侧边栏固定 --- */
+    position: sticky;
+    top: 20px; /* 顶部间距可自行调整 */
+    /* 防止 flex 拉伸影响粘性定位，确保其高度自适应 */
+    align-self: flex-start; 
+}
+
+.right {
+    flex-grow: 1;
+}
+
+.articleWrapper {
+    background: rgba(255, 255, 255, 0.85); /* 稍微降低不透明度 */
+    backdrop-filter: blur(15px); /* 增强模糊效果 */
+    border-radius: 12px; /* 与卡片风格统一 */
+    padding: 48px 56px; /* 增加内边距 */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); /* 调整阴影 */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.articleTitle {
+    font-size: 2.8rem; /* 增大标题字号 */
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.articleMeta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #718096;
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+    margin-left: 8px;
+}
+
+.tag {
+    background-color: #e0e7ff; /* 淡蓝色背景 */
+    color: #4f46e5; /* 深一点的蓝色字体 */
+    padding: 4px 12px;
+    border-radius: 14px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tag:hover {
+    background-color: #c7d2fe;
+    transform: translateY(-2px);
+}
+
+.articleContent {
+    color: #334155; /* 更柔和的黑色 */
+    line-height: 1.9;
+    font-size: 1.05rem;
+}
+
+/* --- Markdown 元素样式 --- */
+
+.articleContent h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 48px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.articleContent p {
+    margin-bottom: 20px;
+}
+
+.articleContent a {
+    color: #3b82f6;
+    text-decoration: none;
+    border-bottom: 1px solid #93c5fd;
+    transition: all 0.2s ease;
+}
+
+.articleContent a:hover {
+    background-color: #eff6ff;
+}
+
+.articleContent code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.articleContent pre > code {
+    padding: 0;
+}
+
+.articleContent pre {
+    background-color: #0d1117; /* 深色代码块背景 */
+    color: #c9d1d9;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 24px;
+}
+
+.articleContent blockquote {
+    border-left: 4px solid #93c5fd;
+    padding-left: 20px;
+    margin: 24px 0;
+    color: #64748b;
+    font-style: italic;
+}
+
+.articleContent ul, .articleContent ol {
+    padding-left: 24px;
+    margin-bottom: 20px;
+}
+
+.articleContent li {
+    margin-bottom: 10px;
+}
+
+
+/* Markdown 样式 */
+.articleContent h1,
+.articleContent h2,
+.articleContent h3 {
+    color: #1a202c;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.3em;
+}
+
+.articleContent p {
+    margin-bottom: 1.2em;
+}
+
+.articleContent a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.articleContent a:hover {
+    text-decoration: underline;
+}
+
+.articleContent code {
+    background: #edf2f7;
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.articleContent pre {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 1em;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+.articleContent pre code {
+    background: none;
+    padding: 0;
+}
+
+.articleContent blockquote {
+    border-left: 4px solid #cbd5e0;
+    padding-left: 1em;
+    color: #718096;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.articleContent ul,
+.articleContent ol {
+    padding-left: 2em;
+}
