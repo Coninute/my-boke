@@ -19,7 +19,7 @@
   position: relative; /* 添加 position: relative 以便 z-index 生效 */
   z-index: 2; /* 将 z-index 设为 2，使其在 .vantaBox 之上 */
   /* 让浏览器窗口负责滚动，以便 sticky 正常工作 */
-  padding: 80px 20px 20px; /* 顶部留白避免与导航重叠 */
+  padding-top: 100px; /* 顶部留白避免与导航重叠 */
   box-sizing: border-box;
 }
 

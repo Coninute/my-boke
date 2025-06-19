@@ -1,0 +1,19 @@
+.footer {
+  background-color: rgba(23, 116, 245, 0.44);
+  backdrop-filter: blur(5px);
+  padding: 2rem 1rem;
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+  color: #075985; /* text-cyan-800 */
+  font-size: 0.875rem; /* text-sm */
+  /* border-top: 1px solid rgba(186, 230, 253, 0.8); border-blue-200 with 80% opacity */
+}
+
+.container {
+  max-width: 1152px; /* max-w-6xl */
+  margin: 0 auto;
+}
+
+.container p {
+  margin: 0.25rem 0;
+}

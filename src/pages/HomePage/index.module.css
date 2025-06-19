@@ -45,7 +45,6 @@
   z-index: 1;
   text-align: center;
   color: #333; /* Adjust text color for visibility against the background */
-  padding: 20px;
   background-color: rgba(255, 255, 255, 0.3); /* Optional: slight background for readability */
   border-radius: 8px;
 }
@@ -93,4 +92,13 @@
 .scrollToTopButton:hover {
   background-color: #f0f0f0;
 }
+
+.footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
 

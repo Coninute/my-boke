@@ -1,0 +1,9 @@
+.paragraph {
+  color: #4b5563; /* text-gray-600 */
+  margin-bottom: 1rem; /* mb-4 */
+  line-height: 1.625; /* leading-relaxed */
+}
+
+.paragraph:last-child {
+  margin-bottom: 0;
+}

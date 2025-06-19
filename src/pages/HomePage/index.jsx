@@ -8,6 +8,7 @@ import BlogSection from './components/BlogSection';
 import NotesSection from './components/NotesSection';
 import VantaBackground from '../../components/VantaBackground';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import Footer from '../../components/Footer';
 
 function HomePage() {
   return (
@@ -24,6 +25,9 @@ function HomePage() {
         <NotesSection />
         <BlogSection />
         <ProjectSection />
+      </div>
+      <div className={styles.footer}>
+        <Footer />
       </div>
       <ScrollToTopButton />
     </div>

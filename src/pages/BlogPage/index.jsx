@@ -3,6 +3,7 @@ import MainContent from './components/MainContent';
 import { articles } from './blogData';
 import styles from './index.module.css';
 import VantaBackground from '../../components/VantaBackground';
+import Footer from '../../components/Footer';
 
 function BlogPage() {
   return (
@@ -12,6 +13,7 @@ function BlogPage() {
       </div>
       <div className={styles.scrollBox}>
         <MainContent articles={articles} />
+        <Footer />
       </div>
     </div>
   );

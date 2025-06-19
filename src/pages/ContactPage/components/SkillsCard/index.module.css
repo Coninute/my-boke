@@ -1,0 +1,58 @@
+.skillsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* space-y-4 */
+}
+
+.skillLabel {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem; /* mb-1 */
+}
+
+.skillName {
+  font-weight: 500;
+  color: #374151; /* text-gray-700 */
+}
+
+.skillPercentage {
+  font-size: 0.875rem; /* text-sm */
+  color: #4b5563; /* text-gray-600 */
+}
+
+.progressBarContainer {
+  width: 100%;
+  background-color: #e5e7eb; /* bg-gray-200 */
+  border-radius: 9999px; /* rounded-full */
+  height: 0.5rem; /* h-2 */
+}
+
+.progressBar {
+  background-color: #3B82F6; /* bg-primary */
+  height: 0.5rem; /* h-2 */
+  border-radius: 9999px; /* rounded-full */
+}
+
+.techStackContainer {
+  margin-top: 1.5rem; /* mt-6 */
+}
+
+.techStackTitle {
+  font-weight: 500;
+  color: #1f2937; /* text-gray-800 */
+  margin-bottom: 0.75rem; /* mb-3 */
+}
+
+.techStackBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* gap-2 */
+}
+
+.badge {
+  background-color: #DBEAFE; /* bg-blue-100 */
+  color: #3B82F6; /* text-primary */
+  font-size: 0.75rem; /* text-xs */
+  padding: 0.25rem 0.75rem; /* px-3 py-1 */
+  border-radius: 9999px; /* rounded-full */
+}
