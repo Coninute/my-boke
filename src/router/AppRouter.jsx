@@ -1,12 +1,13 @@
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import BlogPage from '../pages/BlogPage';
 import BlogDetail from '../pages/BlogPage/components/BlogDetail';
 import ProjectsPage from '../pages/ProjectsPage';
-import AIQueryPage from '../pages/AIQueryPage';
+import ResourceSharingPage from '@/pages/ResourceSharingPage';
 import ContactPage from '../pages/ContactPage';
 import MessageWallPage from '../pages/MessageWallPage';
-import NotFoundPage from '../components/NotFoundPage'; // 导入 NotFoundPage
+import NotFoundPage from '../components/NotFoundPage'; 
 
 function AppRouter() {
   return (
@@ -14,11 +15,11 @@ function AppRouter() {
       <Route path="/" element={<HomePage />} />
       <Route path="/blog" element={<BlogPage />} />
       <Route path="/projects" element={<ProjectsPage />} />
-      <Route path="/ai-query" element={<AIQueryPage />} />
+      <Route path="/resource-sharing" element={<ResourceSharingPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/message-wall" element={<MessageWallPage />} />
-      <Route path="/blog1" element={<BlogDetail />} />
-      <Route path="*" element={<NotFoundPage />} /> {/* 添加 404 路由 */}
+      <Route path="/blog/:id" element={<BlogDetail />} />
+      <Route path="*" element={<NotFoundPage />} /> 
     </Routes>
   );
 }

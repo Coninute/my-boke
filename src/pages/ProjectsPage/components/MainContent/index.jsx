@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './MainContent.module.css';
 import UserProfileCard from '@/components/BlogComponemts/UserProfileCard';
-import WeatherCard from '@/components/BlogComponemts/WeatherCard';
 import TagsCard from '@/components/BlogComponemts/TagsCard';
 import ProjectCard from '../ProjectCard';
 
@@ -10,7 +9,6 @@ function MainContent({ projects }) {
     <div className={styles.mainContentContainer}>
       <div className={styles.leftColumn}>
         <UserProfileCard />
-        <WeatherCard />
         <TagsCard />
       </div>
       <div className={styles.rightColumn}>

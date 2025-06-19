@@ -1,0 +1,420 @@
+/* 基础样式 */
+.resourceSharingPage {
+  padding-top: 100px;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #333333;
+}
+
+.vantaBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* 将 z-index 设为 1，使其在 .resourceSharingPage 之上 */
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+
+/* 主要内容区域 */
+.main {
+  position: relative;
+  /* 添加 position: relative 以便 z-index 生效 */
+  z-index: 2;
+  /* 将 z-index 设为 2，使其在 .vantaBox 之上 */
+}
+
+.pageTitle {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pageTitle h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.pageTitle h1 span {
+  color: #165DFF;
+}
+
+.pageTitle p {
+  color: #4b5563;
+  max-width: 48rem;
+  margin: 0 auto;
+  font-size: 1.125rem;
+}
+
+/* 筛选区域 */
+.filterSection {
+  margin-bottom: 3rem;
+}
+
+.categoryFilters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.categoryButton {
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  background-color: white;
+  color: #374151;
+  font-weight: 500;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.categoryButton:hover {
+  border-color: #165DFF;
+  color: #165DFF;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.categoryButton.active {
+  background-color: #165DFF;
+  color: white;
+  border-color: #165DFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 资源网格 */
+.resourcesGrid {
+  margin: 0 auto;
+  width:1600px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.resourceCard {
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.resourceCard:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.cardImage {
+  position: relative;
+  height: 12rem;
+  overflow: hidden;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s;
+}
+
+.resourceCard:hover .cardImage img {
+  transform: scale(1.1);
+}
+
+.resourceType {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background-color: rgba(22, 93, 255, 0.9);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tags span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.cardContent h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.cardContent p {
+  color: #4b5563;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background-color: #e5e7eb;
+}
+
+.userInfo span {
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.viewDetails {
+  color: #165DFF;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.viewDetails:hover {
+  color: #1247cc;
+}
+
+/* 加载更多 */
+.loadMore {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.loadMore button {
+  padding: 0.75rem 1.5rem;
+  background-color: white;
+  border: 1px solid #165DFF;
+  color: #165DFF;
+  border-radius: 9999px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 auto;
+  transition: all 0.3s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.loadMore button:hover {
+  background-color: #165DFF;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* 订阅区域 */
+.subscribeSection {
+  margin-top: 5rem;
+  background: rgba(23, 116, 245, 0.44);
+  border-radius: 1.5rem 1.5rem 0 0;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.subscribeSection h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.subscribeSection p {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 48rem;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.subscribeForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 32rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.subscribeForm input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 9999px;
+  border: none;
+  outline: none;
+}
+
+.subscribeForm button {
+  padding: 0.75rem 1.5rem;
+  background-color: white;
+  color: #165DFF;
+  font-weight: 500;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.subscribeForm button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.subscribeSection>p:last-child {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* 页脚 */
+.footer {
+  background-color: #333333;
+  color: white;
+  margin-top: 5rem;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 3rem 0;
+}
+
+.footerSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerSection h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footerSection h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footerSection p {
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLinks a {
+  color: #9ca3af;
+  font-size: 1.25rem;
+  transition: color 0.3s;
+}
+
+.socialLinks a:hover {
+  color: white;
+}
+
+.footerSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerSection li {
+  margin-bottom: 0.5rem;
+}
+
+.footerSection a {
+  color: #9ca3af;
+  transition: color 0.3s;
+}
+
+.footerSection a:hover {
+  color: white;
+}
+
+.footerSection li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.copyright {
+  border-top: 1px solid #4b5563;
+  padding: 1.5rem 0;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+/* 响应式调整 */
+@media (min-width: 768px) {
+  .desktopNav {
+    display: flex;
+  }
+
+  .mobileMenuButton {
+    display: none;
+  }
+
+  .subscribeForm {
+    flex-direction: row;
+  }
+
+  .subscribeForm input {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .resourcesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -7,7 +7,7 @@ const navItemsData = [
   { path: "/", label: "个人主页", icon: "icon-shouye" },
   { path: "/blog", label: "个人博客", icon: "icon-boke" },
   { path: "/projects", label: "个人项目", icon: "icon-xiangmu" },
-  { path: "/ai-query", label: "AI智问", icon: "icon-AIdamoxing" },
+  { path: "/resource-sharing", label: "资源分享", icon: "icon-resource" },
   { path: "/contact", label: "联系博主", icon: "icon-lianxi" },
   { path: "/message-wall", label: "留言墙", icon: "icon-liuyanqiang" }
 ];

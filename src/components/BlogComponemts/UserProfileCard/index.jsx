@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../MainContent.module.css';
+import styles from './MainContent.module.css';
 import { FaGithub, FaBook, FaEnvelope, FaWeibo } from 'react-icons/fa'; // 假设使用react-icons
 
 function UserProfileCard() {

@@ -1,0 +1,80 @@
+/* FilterSection/index.module.css */
+
+.filterSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #eef0f2; /* 使用下边框进行分割 */
+  margin: 0 auto;
+  margin-bottom: 30px;
+  width: 1600px;
+}
+
+/* --- 搜索输入 --- */
+.searchContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 12px 12px 40px; /* 左侧内边距用于图标 */
+  background-color: #f7f8fa; /* 浅灰色背景 */
+  border: 1px solid #f7f8fa; /* 边框与背景同色 */
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.searchInput::placeholder {
+  color: #aaa;
+}
+
+.searchInput:focus {
+  outline: none;
+  background-color: #fff;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  width: 20px;
+  height: 20px;
+  color: #aaa;
+  pointer-events: none; /* 让图标不响应鼠标事件 */
+}
+
+/* --- 分类选择器 --- */
+.categorySelector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.categoryButton {
+  padding: 8px 16px;
+  border: 1px solid transparent; /* 默认无边框 */
+  border-radius: 20px; /* 胶囊形状 */
+  background-color: #f7f8fa; /* 浅灰色背景 */
+  color: #555;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.categoryButton:hover {
+  background-color: #eef0f2;
+}
+
+.categoryButton.active {
+  background-color: #007bff;
+  color: #ffffff;
+  border-color: #007bff;
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}

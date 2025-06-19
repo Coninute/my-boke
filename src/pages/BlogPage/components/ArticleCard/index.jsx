@@ -1,12 +1,17 @@
 import React from 'react';
 import styles from '../MainContent/MainContent.module.css';
 import { FaThumbtack, FaClock } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 function ArticleCard({ article }) {
+  const navigate = useNavigate();
+  const handleArticleClick = () => {
+    navigate(`/blog/${article.id}`);
+  };
   return (
-    <div className={`${styles.card} ${styles.articleCard}`}>
+    <div className={`${styles.card} ${styles.articleCard}`} onClick={handleArticleClick}>
       {article.imageUrl && (
-        <img src="/logo.png" alt={article.title} className={styles.articleImage} />
+          <img src={article.imageUrl} alt={article.title} className={styles.articleImage} />
       )}
       <div className={styles.articleContent}>
         <h3 className={styles.articleTitle}>{article.title}</h3>
