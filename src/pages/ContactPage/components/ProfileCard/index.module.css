@@ -1,5 +1,5 @@
 .card {
-  background-color: white;
+  background-color: var(--background-color-card);
   border-radius: 1rem; /* rounded-2xl */
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
   overflow: hidden;
@@ -20,7 +20,7 @@
 }
 
 .imageContainer {
-  background-color: #EFF6FF; /* bg-blue-50 */
+  background-color: var(--profile-image-background-color); /* bg-blue-50 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,7 +37,7 @@
   height: 16rem; /* h-64 */
   border-radius: 9999px; /* rounded-full */
   object-fit: cover;
-  border: 4px solid white;
+  border: 4px solid var(--background-color-card);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
 }
 
@@ -45,8 +45,8 @@
   position: absolute;
   bottom: -0.75rem; /* -bottom-3 */
   right: -0.75rem; /* -right-3 */
-  background-color: #3B82F6; /* bg-primary */
-  color: white;
+  background-color: var(--button-primary-background-color); /* bg-primary */
+  color: var(--button-primary-text-color);
   border-radius: 9999px; /* rounded-full */
   padding: 0.75rem; /* p-3 */
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
@@ -64,16 +64,16 @@
 .greeting {
   font-size: 1.5rem; /* text-2xl */
   font-weight: 700;
-  color: #1f2937; /* text-gray-800 */
+  color: var(--text-color-primary); /* text-gray-800 */
   margin-bottom: 1rem; /* mb-4 */
 }
 
 .name {
-  color: #3B82F6; /* text-primary */
+  color: var(--link-color); /* text-primary */
 }
 
 .bio {
-  color: #4b5563; /* text-gray-600 */
+  color: var(--text-color-secondary); /* text-gray-600 */
   margin-bottom: 1.5rem; /* mb-6 */
   line-height: 1.625; /* leading-relaxed */
 }
@@ -91,17 +91,17 @@
 }
 
 .detailItem > i {
-  color: #3B82F6; /* text-primary */
+  color: var(--link-color); /* text-primary */
   margin-right: 0.75rem; /* mr-3 */
 }
 
 .detailItem > span,
 .detailItem > a {
-  color: #4b5563; /* text-gray-600 */
+  color: var(--text-color-secondary); /* text-gray-600 */
 }
 
 .link:hover {
-  color: #3B82F6; /* hover:text-primary */
+  color: var(--link-color); /* hover:text-primary */
 }
 
 .socialLinks {
@@ -110,15 +110,15 @@
 }
 
 .socialLink {
-  background-color: #DBEAFE; /* bg-blue-100 */
-  color: #3B82F6; /* text-primary */
+  background-color: var(--social-link-background-color); /* bg-blue-100 */
+  color: var(--social-link-text-color); /* text-primary */
   padding: 0.5rem; /* p-2 */
   border-radius: 9999px; /* rounded-full */
   transition: background-color 0.3s ease;
 }
 
 .socialLink:hover {
-  background-color: #BFDBFE; /* hover:bg-blue-200 */
+  background-color: var(--social-link-hover-background-color); /* hover:bg-blue-200 */
 }
 
 .contactButtonWrapper {
@@ -128,8 +128,8 @@
 .contactButton {
   display: inline-flex;
   align-items: center;
-  background-color: #3B82F6; /* bg-primary */
-  color: white;
+  background-color: var(--button-primary-background-color); /* bg-primary */
+  color: var(--button-primary-text-color);
   font-weight: 500;
   padding: 0.5rem 1.5rem; /* py-2 px-6 */
   border-radius: 0.5rem; /* rounded-lg */
@@ -138,7 +138,7 @@
 }
 
 .contactButton:hover {
-  background-color: #2563EB; /* hover:bg-primary/90 */
+  background-color: var(--button-primary-hover-background-color); /* hover:bg-primary/90 */
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* hover:shadow-lg */
 }
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { create } from 'danmu'; // Make sure 'danmu' is installed
 import styles from './index.module.css';
-import VantaBackground from '../../components/VantaBackground'; // 导入新的背景组件
+import VantaBackground from '@/components/VantaBackground'; // 导入新的背景组件
 
 const MessageWallPage = () => {
   const danmuContainerRef = useRef(null);
@@ -60,7 +60,7 @@ const MessageWallPage = () => {
                   // 如果两种常见的文本路径都没有找到，记录警告
                   console.warn('Danmaku object does not have a recognizable text field (expected danmaku.data.text or danmaku.text). Danmaku object:', danmaku);
                 }
-                
+
                 console.log('最终用于显示的文本内容:', JSON.stringify(textToDisplay)); // 打印将要显示的文本
 
                 // 创建弹幕节点
@@ -69,7 +69,7 @@ const MessageWallPage = () => {
                 danmaku.node.style.fontSize = '18px';
                 danmaku.node.style.fontWeight = 'bold';
                 danmaku.node.style.padding = '3px 8px';
-                danmaku.node.style.backgroundColor = 'rgba(0, 0, 0, 0.35)';
+                danmaku.node.style.backgroundColor = 'rgba(0, 0, 0, 0.15)';
                 danmaku.node.style.borderRadius = '4px';
                 danmaku.node.style.textShadow = '1px 1px 2px rgba(0,0,0,0.7)';
                 danmaku.node.style.whiteSpace = 'nowrap';
@@ -195,23 +195,25 @@ const MessageWallPage = () => {
 
   return (
     <div className={styles.messageWallPageContainer}>
-      <VantaBackground />
-      <h1 className={styles.title}>弹幕留言墙</h1>
-      <div ref={danmuContainerRef} className={styles.danmuContainer}>
-        {/* Danmaku will be rendered here by danmu.js */}
+      <div className={styles.vantaBox}>
+        <VantaBackground />
       </div>
-      <div className={styles.inputArea}>
-        <input
-          type="text"
-          value={newMessage}
-          onChange={(e) => setNewMessage(e.target.value)}
-          onKeyDown={handleKeyDown}
-          placeholder="输入你的弹幕内容..."
-          className={styles.danmuInput}
-        />
-        <button onClick={handleSendMessage} className={styles.sendButton}>
-          发送弹幕
-        </button>
+      <div className={styles.scrollBox}>
+        <div ref={danmuContainerRef} className={styles.danmuContainer}>
+        </div>
+        <div className={styles.inputArea}>
+          <input
+            type="text"
+            value={newMessage}
+            onChange={(e) => setNewMessage(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="输入你的弹幕内容..."
+            className={styles.danmuInput}
+          />
+          <button onClick={handleSendMessage} className={styles.sendButton}>
+            发送弹幕
+          </button>
+        </div>
       </div>
     </div>
   );

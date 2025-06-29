@@ -2,7 +2,7 @@
 .resourceSharingPage {
   padding-top: 100px;
   font-family: 'Inter', system-ui, sans-serif;
-  color: #333333;
+  color: var(--text-color-primary);
 }
 
 .vantaBox {
@@ -43,11 +43,11 @@
 }
 
 .pageTitle h1 span {
-  color: #165DFF;
+  color: var(--resource-primary-color);
 }
 
 .pageTitle p {
-  color: #4b5563;
+  color: var(--text-color-secondary);
   max-width: 48rem;
   margin: 0 auto;
   font-size: 1.125rem;
@@ -69,10 +69,10 @@
 .categoryButton {
   padding: 0.5rem 1.25rem;
   border-radius: 9999px;
-  background-color: white;
-  color: #374151;
+  background-color: var(--resource-category-button-bg);
+  color: var(--resource-category-button-text);
   font-weight: 500;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--resource-category-button-border);
   transition: all 0.3s;
   display: flex;
   align-items: center;
@@ -80,15 +80,15 @@
 }
 
 .categoryButton:hover {
-  border-color: #165DFF;
-  color: #165DFF;
+  border-color: var(--resource-category-button-hover-border);
+  color: var(--resource-category-button-hover-text);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .categoryButton.active {
-  background-color: #165DFF;
-  color: white;
-  border-color: #165DFF;
+  background-color: var(--resource-category-button-active-bg);
+  color: var(--resource-category-button-active-text);
+  border-color: var(--resource-category-button-active-bg);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -103,7 +103,7 @@
 }
 
 .resourceCard {
-  background-color: white;
+  background-color: var(--background-color-card);
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -136,8 +136,8 @@
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
-  background-color: rgba(22, 93, 255, 0.9);
-  color: white;
+  background-color: var(--resource-type-badge-bg);
+  color: var(--resource-type-badge-text);
   font-size: 0.75rem;
   font-weight: bold;
   padding: 0.25rem 0.5rem;
@@ -169,10 +169,11 @@
 }
 
 .cardContent p {
-  color: #4b5563;
+  color: var(--text-color-secondary);
   margin-bottom: 1rem;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -193,16 +194,16 @@
   width: 2rem;
   height: 2rem;
   border-radius: 9999px;
-  background-color: #e5e7eb;
+  background-color: var(--resource-avatar-bg);
 }
 
 .userInfo span {
   font-size: 0.875rem;
-  color: #4b5563;
+  color: var(--text-color-secondary);
 }
 
 .viewDetails {
-  color: #165DFF;
+  color: var(--resource-view-details-text);
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -210,7 +211,7 @@
 }
 
 .viewDetails:hover {
-  color: #1247cc;
+  color: var(--resource-view-details-hover-text);
 }
 
 /* 加载更多 */
@@ -221,9 +222,9 @@
 
 .loadMore button {
   padding: 0.75rem 1.5rem;
-  background-color: white;
-  border: 1px solid #165DFF;
-  color: #165DFF;
+  background-color: var(--resource-load-more-bg);
+  border: 1px solid var(--resource-load-more-border);
+  color: var(--resource-load-more-text);
   border-radius: 9999px;
   font-weight: 500;
   display: flex;
@@ -235,15 +236,15 @@
 }
 
 .loadMore button:hover {
-  background-color: #165DFF;
-  color: white;
+  background-color: var(--resource-load-more-hover-bg);
+  color: var(--resource-load-more-hover-text);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* 订阅区域 */
 .subscribeSection {
   margin-top: 5rem;
-  background: rgba(23, 116, 245, 0.44);
+  background: var(--subscribe-section-bg);
   border-radius: 1.5rem 1.5rem 0 0;
   padding: 2rem;
   position: relative;
@@ -254,7 +255,7 @@
 .subscribeSection h2 {
   font-size: 1.5rem;
   font-weight: bold;
-  color: white;
+  color: var(--subscribe-section-title-color);
   margin-bottom: 0.5rem;
   text-align: center;
   position: relative;
@@ -262,7 +263,7 @@
 }
 
 .subscribeSection p {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--subscribe-section-text-color);
   max-width: 48rem;
   margin: 0 auto 1.5rem;
   text-align: center;
@@ -290,8 +291,8 @@
 
 .subscribeForm button {
   padding: 0.75rem 1.5rem;
-  background-color: white;
-  color: #165DFF;
+  background-color: var(--subscribe-button-bg);
+  color: var(--subscribe-button-text-color);
   font-weight: 500;
   border-radius: 9999px;
   border: none;
@@ -300,20 +301,20 @@
 }
 
 .subscribeForm button:hover {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: var(--subscribe-button-hover-bg);
 }
 
 .subscribeSection>p:last-child {
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--subscribe-section-secondary-text-color);
   margin-top: 1rem;
   text-align: center;
 }
 
 /* 页脚 */
 .footer {
-  background-color: #333333;
-  color: white;
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
   margin-top: 5rem;
 }
 
@@ -342,7 +343,7 @@
 }
 
 .footerSection p {
-  color: #9ca3af;
+  color: var(--footer-text-secondary-color);
   margin-bottom: 1rem;
 }
 
@@ -352,13 +353,13 @@
 }
 
 .socialLinks a {
-  color: #9ca3af;
+  color: var(--footer-text-secondary-color);
   font-size: 1.25rem;
   transition: color 0.3s;
 }
 
 .socialLinks a:hover {
-  color: white;
+  color: var(--footer-text-color);
 }
 
 .footerSection ul {
@@ -372,12 +373,12 @@
 }
 
 .footerSection a {
-  color: #9ca3af;
+  color: var(--footer-text-secondary-color);
   transition: color 0.3s;
 }
 
 .footerSection a:hover {
-  color: white;
+  color: var(--footer-text-color);
 }
 
 .footerSection li {
@@ -387,10 +388,10 @@
 }
 
 .copyright {
-  border-top: 1px solid #4b5563;
+  border-top: 1px solid var(--footer-border-color);
   padding: 1.5rem 0;
   text-align: center;
-  color: #9ca3af;
+  color: var(--footer-text-secondary-color);
   font-size: 0.875rem;
 }
 

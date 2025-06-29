@@ -12,23 +12,23 @@
 
 .skillName {
   font-weight: 500;
-  color: #374151; /* text-gray-700 */
+  color: var(--skill-name-color);
 }
 
 .skillPercentage {
   font-size: 0.875rem; /* text-sm */
-  color: #4b5563; /* text-gray-600 */
+  color: var(--skill-percentage-color);
 }
 
 .progressBarContainer {
   width: 100%;
-  background-color: #e5e7eb; /* bg-gray-200 */
+  background-color: var(--progress-bar-bg);
   border-radius: 9999px; /* rounded-full */
   height: 0.5rem; /* h-2 */
 }
 
 .progressBar {
-  background-color: #3B82F6; /* bg-primary */
+  background-color: var(--progress-bar-fill-bg);
   height: 0.5rem; /* h-2 */
   border-radius: 9999px; /* rounded-full */
 }
@@ -39,7 +39,7 @@
 
 .techStackTitle {
   font-weight: 500;
-  color: #1f2937; /* text-gray-800 */
+  color: var(--tech-stack-title-color);
   margin-bottom: 0.75rem; /* mb-3 */
 }
 
@@ -50,8 +50,8 @@
 }
 
 .badge {
-  background-color: #DBEAFE; /* bg-blue-100 */
-  color: #3B82F6; /* text-primary */
+  background-color: var(--tech-badge-bg);
+  color: var(--tech-badge-text-color);
   font-size: 0.75rem; /* text-xs */
   padding: 0.25rem 0.75rem; /* px-3 py-1 */
   border-radius: 9999px; /* rounded-full */

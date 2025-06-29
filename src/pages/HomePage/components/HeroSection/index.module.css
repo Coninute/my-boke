@@ -12,17 +12,17 @@
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 24px;
-  color: #2c3e50;
+  color: var(--homepage-hero-title-color); /* 大标题色 */
 }
 
 .highlight {
-  color: #007bff;
+  color: var(--homepage-hero-highlight-color); /* 高亮色 */
 }
 
 .subtitle {
   font-size: 22px;
   line-height: 1.6;
-  color: #555;
+  color: var(--homepage-hero-subtitle-color); /* 副标题色 */
   margin-bottom: 50px;
   max-width: 600px;
 }
@@ -46,25 +46,25 @@
 }
 
 .primaryButton {
-  background-color: #007bff;
-  color: white;
-  box-shadow: 0 4px 14px rgba(0, 123, 255, 0.3);
+  background-color: var(--homepage-hero-btn-bg); /* 主按钮背景 */
+  color: var(--homepage-hero-btn-text); /* 主按钮文字 */
+  box-shadow: var(--homepage-hero-btn-shadow); /* 主按钮阴影 */
 }
 
 .primaryButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+  box-shadow: var(--homepage-hero-btn-hover-shadow); /* 主按钮悬浮阴影 */
 }
 
 .secondaryButton {
-  background-color: #fff;
-  color: #333;
-  border: 1px solid #e0e0e0;
+  background-color: var(--homepage-hero-btn-secondary-bg); /* 次按钮背景 */
+  color: var(--homepage-hero-btn-secondary-text); /* 次按钮文字 */
+  border: 1px solid var(--homepage-hero-btn-secondary-border); /* 次按钮边框 */
 }
 
 .secondaryButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--homepage-hero-btn-secondary-hover-shadow); /* 次按钮悬浮阴影 */
 }
 
 .scrollIndicator {
@@ -72,14 +72,14 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  color: #888;
+  color: var(--homepage-scroll-indicator-color); /* 滚动提示色 */
   font-size: 14px;
 }
 
 .mouseIcon {
   width: 24px;
   height: 40px;
-  border: 2px solid #aaa;
+  border: 2px solid var(--homepage-mouse-icon-border); /* 鼠标icon边框 */
   border-radius: 12px;
   position: relative;
 }
@@ -92,7 +92,7 @@
   transform: translateX(-50%);
   width: 4px;
   height: 8px;
-  background-color: #aaa;
+  background-color: var(--homepage-mouse-icon-inner); /* 鼠标icon内点 */
   border-radius: 2px;
   animation: scroll-animation 2s infinite;
 }

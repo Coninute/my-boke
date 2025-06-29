@@ -1,56 +1,44 @@
 .messageWallPageContainer {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.vantaBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.scrollBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* Center content vertically */
-  padding: 20px;
-  min-height: 90vh;
-  /* Use min-height to ensure it takes at least viewport height */
   box-sizing: border-box;
-  background-color: #f4f7f6;
-  /* Light background for the page */
 }
 
 .title {
-  color: #333;
+  color: var(--message-wall-title-color);
   margin-bottom: 20px;
   font-size: 2.5em;
 }
 
 .danmuContainer {
-  width: 80%;
-  max-width: 1000px;
-  /* Max width for larger screens */
-  height: 60vh;
-  /* Relative height */
-  min-height: 400px;
-  /* Minimum height */
-  border: 2px solid #007bff;
-  /* Border color to match button */
-  background-color: #2c3e50;
-  /* Darker background for contrast with light text danmaku */
+  flex-grow: 1;
+  width: 100%;
+  background-color: var(--message-wall-danmu-bg);
   position: relative !important;
-  /* Essential for danmu.js positioning */
   overflow: hidden !important;
-  /* Essential for danmu.js, prevents danmaku from appearing outside */
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  margin-bottom: 25px;
   z-index: 1;
-  /* Ensure container has a stacking context */
 }
 
-/* 确保弹幕容器内的所有元素都可见 */
-/* .danmuContainer > div {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  overflow: hidden !important;
-  z-index: 2;
-} */
 
 /* 弹幕节点样式 */
 .danmuContainer [data-danmu-container] {
@@ -76,33 +64,36 @@
 .inputArea {
   display: flex;
   gap: 12px;
-  /* Space between input and button */
-  width: 70%;
-  max-width: 800px;
+  width: 100%;
   align-items: center;
-  /* Align items vertically */
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: var(--message-wall-input-area-bg);
+  flex-shrink: 0;
 }
 
 .danmuInput {
   flex-grow: 1;
   /* Input takes available space */
   padding: 12px 15px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--message-wall-input-border);
+  background-color: var(--message-wall-input-bg);
+  color: var(--text-color-primary);
   border-radius: 6px;
   font-size: 1em;
   transition: border-color 0.3s ease;
 }
 
 .danmuInput:focus {
-  border-color: #007bff;
+  border-color: var(--message-wall-input-focus-border);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 2px var(--message-wall-input-focus-shadow);
 }
 
 .sendButton {
   padding: 12px 25px;
-  background-color: #007bff;
-  color: white;
+  background-color: var(--button-primary-background-color);
+  color: var(--button-primary-text-color);
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -112,9 +103,9 @@
 }
 
 .sendButton:hover {
-  background-color: #0056b3;
+  background-color: var(--button-primary-hover-background-color);
 }
 
 .sendButton:active {
-  background-color: #004085;
+  background-color: var(--button-primary-active-background-color);
 }

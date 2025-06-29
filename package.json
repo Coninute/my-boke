@@ -12,6 +12,7 @@
   "dependencies": {
     "danmu": "^0.16.0",
     "font-awesome": "^4.7.0",
+    "framer-motion": "^12.18.1",
     "localforage": "^1.10.0",
     "lucide-react": "^0.515.0",
     "prop-types": "^15.8.1",

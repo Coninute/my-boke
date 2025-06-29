@@ -7,18 +7,18 @@
 .statItem {
   text-align: center;
   padding: 1rem; /* p-4 */
-  background-color: #F0F9FF; /* bg-blue-50 */
+  background-color: var(--stats-card-background-color);
   border-radius: 0.5rem; /* rounded-lg */
 }
 
 .statValue {
   font-size: 1.875rem; /* text-3xl */
   font-weight: 700;
-  color: #3B82F6; /* text-primary */
+  color: var(--stats-card-value-color);
   margin-bottom: 0.25rem; /* mb-1 */
 }
 
 .statLabel {
   font-size: 0.875rem; /* text-sm */
-  color: #4b5563; /* text-gray-600 */
+  color: var(--stats-card-label-color);
 }

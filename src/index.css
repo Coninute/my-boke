@@ -19,12 +19,224 @@
 
   /* 新增的变量 (深色主题) */
   --background-color-primary: var(--background-color);
-  --background-color-secondary: #121212; 
+  --background-color-secondary: #121212;
   --background-color-card: #1e1e1e;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --card-hover-shadow: rgba(0, 0, 0, 0.12);
   --text-color-primary: var(--text-color);
   --text-color-secondary: rgba(255, 255, 255, 0.75);
   --text-color-muted: rgba(255, 255, 255, 0.55);
   --border-color: #383838;
+  --avatar-border-color: #4a5568;
+  --tag-background-color: #2c3e50;
+  --tag-text-color: #ecf0f1;
+  --tag-hover-background-color: #34495e;
+  --tag-hover-text-color: #ffffff;
+  --footer-background-color: rgba(10, 10, 10, 0.7);
+  --footer-text-color: #a0a0a0;
+  --footer-border-top-color: rgba(56, 189, 248, 0.3);
+  --loader-overlay-background: rgba(0, 0, 0, 0.7);
+  --social-link-color: #9ca3af;
+  --social-link-hover-color: #e5e7eb;
+  --pinned-tag-background-color: #4a4a4a;
+  --pinned-tag-text-color: #f6e05e;
+  --article-meta-text-color: #9ca3af;
+  --profile-button-text-color: #e5e7eb;
+  --stats-card-background-color: #1f2937;
+  --stats-card-value-color: #60a5fa;
+  --stats-card-label-color: #9ca3af;
+  --skill-name-color: var(--text-color-primary);
+  --skill-percentage-color: var(--text-color-secondary);
+  --progress-bar-bg: #4a5568;
+  --progress-bar-fill-bg: var(--link-color);
+  --tech-stack-title-color: var(--text-color-primary);
+  --tech-badge-bg: rgba(59, 130, 246, 0.2);
+  --tech-badge-text-color: var(--link-color);
+  /* HomePage 相关变量 */
+  --homepage-hero-title-color: var(--text-color-primary); /* Hero大标题色 */
+  --homepage-hero-highlight-color: var(--link-color); /* Hero高亮色 */
+  --homepage-hero-subtitle-color: var(--text-color-secondary); /* Hero副标题色 */
+  --homepage-hero-btn-bg: var(--button-primary-background-color); /* Hero主按钮背景 */
+  --homepage-hero-btn-text: var(--button-primary-text-color); /* Hero主按钮文字 */
+  --homepage-hero-btn-shadow: 0 4px 14px rgba(0, 123, 255, 0.3); /* Hero主按钮阴影 */
+  --homepage-hero-btn-hover-shadow: 0 6px 20px rgba(0, 123, 255, 0.4); /* Hero主按钮悬浮阴影 */
+  --homepage-hero-btn-secondary-bg: #fff; /* Hero次按钮背景 */
+  --homepage-hero-btn-secondary-text: #333; /* Hero次按钮文字 */
+  --homepage-hero-btn-secondary-border: #e0e0e0; /* Hero次按钮边框 */
+  --homepage-hero-btn-secondary-hover-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Hero次按钮悬浮阴影 */
+  --homepage-scroll-indicator-color: #888; /* Hero滚动提示色 */
+  --homepage-mouse-icon-border: #aaa; /* Hero鼠标icon边框 */
+  --homepage-mouse-icon-inner: #aaa; /* Hero鼠标icon内点 */
+  --homepage-quicklink-card-bg: rgba(255,255,255,0.85); /* 快捷卡片背景 */
+  --homepage-quicklink-card-hover-bg: rgba(255,255,255,0.95); /* 快捷卡片悬浮背景 */
+  --homepage-quicklink-card-text: var(--text-color-primary); /* 快捷卡片文字 */
+  --homepage-quicklink-card-shadow: 0 5px 15px rgba(0,0,0,0.08); /* 快捷卡片阴影 */
+  --homepage-quicklink-card-hover-shadow: 0 8px 25px rgba(0,0,0,0.12); /* 快捷卡片悬浮阴影 */
+  --homepage-quicklink-card-border: rgba(0,0,0,0.05); /* 快捷卡片边框 */
+  --homepage-personal-card-bg: rgba(255,255,255,0.4); /* 个人信息卡片背景 */
+  --homepage-personal-card-shadow: 0 8px 32px rgba(0,0,0,0.08); /* 个人信息卡片阴影 */
+  --homepage-personal-card-title: var(--text-color-primary); /* 个人信息卡片主标题 */
+  --homepage-personal-card-subtitle: #666; /* 个人信息卡片副标题 */
+  --homepage-personal-card-bio: #555; /* 个人信息卡片简介 */
+  --homepage-personal-card-link: #555; /* 个人信息卡片社交链接 */
+  --homepage-personal-card-link-hover: var(--link-color); /* 个人信息卡片社交链接悬浮 */
+  --homepage-programmer-btn-bg: linear-gradient(135deg, #ffc107, #f5a623); /* 程序员锦囊按钮背景 */
+  --homepage-programmer-btn-text: #333; /* 程序员锦囊按钮文字 */
+  --homepage-programmer-btn-shadow: 0 4px 15px rgba(255,193,7,0.4); /* 程序员锦囊按钮阴影 */
+  --homepage-programmer-btn-hover-shadow: 0 6px 20px rgba(255,193,7,0.5); /* 程序员锦囊按钮悬浮阴影 */
+  --homepage-programmer-btn-active-shadow: 0 3px 10px rgba(255,193,7,0.3); /* 程序员锦囊按钮按下阴影 */
+  --homepage-programmer-btn-back-bg: rgba(255,255,255,0.2); /* 程序员锦囊返回按钮背景 */
+  --homepage-programmer-btn-back-text: #fff; /* 程序员锦囊返回按钮文字 */
+  /* ResourceSharingPage 筛选区主题变量 */
+  --input-background-color: #f7f8fa;
+  --input-border-color: #f7f8fa;
+  --input-text-color: #333;
+  --input-placeholder-color: #aaa;
+  --input-focus-background-color: #fff;
+  --input-focus-shadow: rgba(0, 123, 255, 0.1);
+  --button-secondary-background-color: #f7f8fa;
+  --button-secondary-hover-background-color: #eef0f2;
+  --button-secondary-text-color: #555;
+  --button-active-shadow: rgba(0, 123, 255, 0.2);
+
+  /* Article Detail Page Variables */
+  --scrollbar-thumb-color: rgba(255, 255, 255, 0.2);
+  --background-color-card-transparent: rgba(30, 30, 30, 0.85);
+  --border-color-transparent: rgba(255, 255, 255, 0.1);
+  --link-border-color: #646cff;
+  --link-hover-background-color: rgba(100, 108, 255, 0.1);
+  --code-inline-background-color: #2c3e50;
+  --code-block-background-color: #0d1117;
+  --code-block-text-color: #c9d1d9;
+
+  /* Pinned Tag & Primary Button */
+  --tag-pinned-background-color: #b96a09;
+  --tag-pinned-text-color: #fef3c7;
+  --button-primary-background-color: #3b82f6;
+  --button-primary-text-color: #ffffff;
+  --button-primary-hover-background-color: #2563eb;
+  --button-primary-active-background-color: #1d4ed8; /* An even darker blue for active */
+
+  /* Contact Card Variables */
+  --contact-card-gradient-start: #3B82F6;
+  --contact-card-gradient-end: #1E3A8A;
+  --contact-card-text-color: #ffffff;
+  --contact-card-description-color: #DBEAFE;
+  --contact-card-icon-background-color: rgba(255, 255, 255, 0.1);
+  --contact-card-button-background-color: #ffffff;
+  --contact-card-button-text-color: #3B82F6;
+  --contact-card-button-hover-background-color: rgba(255, 255, 255, 0.9);
+
+  /* Hobby Card Variables */
+  --hobby-item-background-color: #1f2937;
+  --hobby-icon-background-color: rgba(96, 165, 250, 0.15);
+  --hobby-icon-color: #60a5fa;
+
+  /* Profile Card Variables */
+  --profile-image-background-color: #2d3748;
+  --social-link-background-color: #2c3e50;
+  --social-link-text-color: #90cdf4;
+  --social-link-hover-background-color: #34495e;
+
+  /* Scroll To Top Button Variables */
+  --scroll-to-top-background-color: #2d3748;
+  --scroll-to-top-text-color: #e2e8f0;
+  --scroll-to-top-border-color: #4a5568;
+  --scroll-to-top-hover-background-color: #4a5568;
+
+  /* Blog Section Variables */
+  --section-background-color: #1e2a3a;
+  --image-placeholder-background-color: #3a4a5a;
+  --text-color-tertiary: #95a5a6;
+  --button-secondary-background-color: transparent;
+  --button-secondary-text-color: var(--text-color-primary);
+  --button-secondary-border-color: #4a5568;
+  --button-secondary-hover-background-color: var(--text-color-primary);
+  --button-secondary-hover-text-color: var(--background-color);
+  --button-secondary-hover-border-color: var(--text-color-primary);
+
+  /* Featured Content Variables */
+  --featured-container-bg: rgba(29, 42, 58, 0.5);
+  --featured-card-bg: rgba(42, 56, 73, 0.6);
+  --featured-card-border: rgba(125, 159, 198, 0.18);
+  --featured-stats-card-1-start: #2c3e50;
+  --featured-stats-card-1-end: #4a69bd;
+  --featured-stats-card-2-start: #4a69bd;
+  --featured-stats-card-2-end: #6a11cb;
+  --featured-intro-card-bg: rgba(42, 56, 73, 0.7);
+  --featured-preview-card-bg: #2d3748;
+  --featured-preview-shape-1-bg: rgba(91, 55, 83, 0.8);
+  --featured-preview-shape-2-bg: rgba(50, 77, 49, 0.8);
+  --featured-preview-body-bg: rgba(41, 61, 80, 0.9);
+
+  /* Message Wall Page Variables */
+  --message-wall-title-color: var(--text-color-primary);
+  --message-wall-danmu-bg: rgba(44, 62, 80, 0.3);
+  --message-wall-input-area-bg: rgba(0, 0, 0, 0.4);
+  --message-wall-input-bg: var(--background-color-light);
+  --message-wall-input-border: var(--border-color);
+  --message-wall-input-focus-border: var(--primary-color);
+  --message-wall-input-focus-shadow: rgba(0, 123, 255, 0.3);
+
+  /* Projects Page Variables */
+  --projects-social-link-color: var(--text-color-secondary);
+  --projects-social-link-hover-color: var(--text-color-primary);
+  --projects-likes-bg: #2d3748;
+  --projects-button-bg: #383838;
+  --projects-button-text-color: var(--text-color-primary);
+  --projects-button-hover-bg: #4a4a4a;
+
+  /* Resource Sharing Page Variables */
+  --resource-primary-color: var(--blue-400);
+  --resource-primary-color-darker: var(--blue-500);
+  --resource-category-button-bg: var(--background-color-card);
+  --resource-category-button-text: var(--text-color-primary);
+  --resource-category-button-border: var(--border-color);
+  --resource-category-button-hover-border: var(--resource-primary-color);
+  --resource-category-button-hover-text: var(--resource-primary-color);
+  --resource-category-button-active-bg: var(--resource-primary-color);
+  --resource-category-button-active-text: #ffffff;
+  --resource-type-badge-bg: rgba(59, 130, 246, 0.9);
+  --resource-type-badge-text: #ffffff;
+  --resource-avatar-bg: var(--background-color-secondary);
+  --resource-view-details-text: var(--resource-primary-color);
+  --resource-view-details-hover-text: var(--resource-primary-color-darker);
+  --resource-load-more-bg: var(--background-color-card);
+  --resource-load-more-border: var(--resource-primary-color);
+  --resource-load-more-text: var(--resource-primary-color);
+  --resource-load-more-hover-bg: var(--resource-primary-color);
+  --resource-load-more-hover-text: #ffffff;
+  --subscribe-section-bg: rgba(59, 130, 246, 0.3);
+  --subscribe-section-title-color: var(--text-color-primary);
+  --subscribe-section-text-color: rgba(235, 235, 245, 0.8);
+  --subscribe-section-secondary-text-color: rgba(235, 235, 245, 0.6);
+  --subscribe-button-bg: var(--gray-100);
+  --subscribe-button-text-color: var(--resource-primary-color);
+  --subscribe-button-hover-bg: var(--gray-200);
+  --footer-bg-color: #1a1a1a;
+  --footer-text-color: var(--text-color-primary);
+  --footer-text-secondary-color: var(--text-color-secondary);
+  --footer-border-color: var(--gray-700);
+
+  /* Navigation Bar */
+  --nav-bar-shadow: rgba(0, 0, 0, 0.05);
+  --theme-switch-bg: var(--gray-700);
+  --theme-switch-border: var(--gray-600);
+  --theme-switch-slider-bg: #ffffff;
+  --theme-switch-slider-icon-light: var(--blue-500);
+  --theme-switch-slider-icon-dark: var(--amber-500);
+  --theme-switch-text-color: var(--text-color-secondary);
+
+  /* Loading Page */
+  --loader-bar-1-bg: #3498DB;
+  --loader-bar-2-bg: #EF4836;
+  --loader-bar-3-bg: #F5AB35;
+
+  /* Not Found Page */
+  --not-found-shadow: rgba(0, 0, 0, 0.1);
+  --not-found-link-shadow: rgba(52, 152, 219, 0.4);
+  --not-found-link-hover-shadow: rgba(52, 152, 219, 0.5);
+  --not-found-link-text-color: #fff;
 
   color-scheme: light dark; /* Still useful for browser UI like scrollbars */
   color: var(--text-color);
@@ -49,10 +261,176 @@ html[data-theme='light'] {
   --background-color-primary: var(--background-color);
   --background-color-secondary: #f0f2f5;
   --background-color-card: #ffffff;
-  --text-color-primary: var(--text-color);
-  --text-color-secondary: #4a4a4a;
-  --text-color-muted: #6c757d;
-  --border-color: #e0e0e0;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --card-hover-shadow: rgba(0, 0, 0, 0.12);
+  --text-color-primary: #213547;
+  --text-color-secondary: #555;
+  --text-color-muted: #888;
+  --border-color: #f0f0f0;
+  --avatar-border-color: #e3eafc;
+  --tag-background-color: #e3f0fd;
+  --tag-text-color: #3b82f6;
+  --tag-hover-background-color: #b4d7fa;
+  --tag-hover-text-color: #2563eb;
+  --footer-background-color: rgba(240, 248, 255, 0.7);
+  --footer-text-color: #075985;
+  --footer-border-top-color: rgba(186, 230, 253, 0.8);
+  --loader-overlay-background: rgba(255, 255, 255, 0.8);
+  --social-link-color: #666;
+  --social-link-hover-color: #333;
+  --pinned-tag-background-color: #fef3c7;
+  --pinned-tag-text-color: #d97706;
+  --article-meta-text-color: #999;
+  --profile-button-text-color: white;
+  --stats-card-background-color: #F0F9FF;
+  --stats-card-value-color: #3B82F6;
+  --stats-card-label-color: #4b5563;
+  --skill-name-color: #374151;
+  --skill-percentage-color: #4b5563;
+  --progress-bar-bg: #e5e7eb;
+  --progress-bar-fill-bg: #3B82F6;
+  --tech-stack-title-color: #1f2937;
+  --tech-badge-bg: #DBEAFE;
+  --tech-badge-text-color: #3B82F6;
+
+  /* Article Detail Page Variables */
+  --scrollbar-thumb-color: rgba(0, 0, 0, 0.2);
+  --background-color-card-transparent: rgba(255, 255, 255, 0.85);
+  --border-color-transparent: rgba(0, 0, 0, 0.1);
+  --link-border-color: #93c5fd;
+  --link-hover-background-color: #eff6ff;
+  --code-inline-background-color: #f1f5f9;
+  --code-block-background-color: #f6f8fa;
+  --code-block-text-color: #24292e;
+
+  /* Pinned Tag & Primary Button */
+  --tag-pinned-background-color: #fef3c7;
+  --tag-pinned-text-color: #d97706;
+  --button-primary-background-color: #3b82f6;
+  --button-primary-text-color: #ffffff;
+  --button-primary-hover-background-color: #2563eb;
+  --button-primary-active-background-color: #1d4ed8;
+
+  /* Contact Card Variables (Keeping consistent branding) */
+  --contact-card-gradient-start: #3B82F6;
+  --contact-card-gradient-end: #1E3A8A;
+  --contact-card-text-color: #ffffff;
+  --contact-card-description-color: #DBEAFE;
+  --contact-card-icon-background-color: rgba(255, 255, 255, 0.1);
+  --contact-card-button-background-color: #ffffff;
+  --contact-card-button-text-color: #3B82F6;
+  --contact-card-button-hover-background-color: rgba(255, 255, 255, 0.9);
+
+  /* Hobby Card Variables */
+  --hobby-item-background-color: #F0F9FF;
+  --hobby-icon-background-color: rgba(59, 130, 246, 0.1);
+  --hobby-icon-color: #3B82F6;
+
+  /* Profile Card Variables */
+  --profile-image-background-color: #EFF6FF;
+  --social-link-background-color: #DBEAFE;
+  --social-link-text-color: #3B82F6;
+  --social-link-hover-background-color: #BFDBFE;
+
+  /* Scroll To Top Button Variables */
+  --scroll-to-top-background-color: #fff;
+  --scroll-to-top-text-color: #333;
+  --scroll-to-top-border-color: #ddd;
+  --scroll-to-top-hover-background-color: #f0f0f0;
+
+  /* Blog Section Variables */
+  --section-background-color: #f8f9fa;
+  --image-placeholder-background-color: #ecf0f1;
+  --text-color-tertiary: #95a5a6;
+  --button-secondary-background-color: #ffffff;
+  --button-secondary-text-color: #2c3e50;
+  --button-secondary-border-color: #bdc3c7;
+  --button-secondary-hover-background-color: #2c3e50;
+  --button-secondary-hover-text-color: #ffffff;
+  --button-secondary-hover-border-color: #2c3e50;
+
+  /* Featured Content Variables */
+  --featured-container-bg: rgba(220, 237, 255, 0.5);
+  --featured-card-bg: rgba(255, 255, 255, 0.6);
+  --featured-card-border: rgba(255, 255, 255, 0.18);
+  --featured-stats-card-1-start: #f1f8e9;
+  --featured-stats-card-1-end: #fce4ec;
+  --featured-stats-card-2-start: #fce4ec;
+  --featured-stats-card-2-end: #e1bee7;
+  --featured-intro-card-bg: rgba(255, 255, 255, 0.7);
+  --featured-preview-card-bg: #fdf6e3;
+  --featured-preview-shape-1-bg: rgba(235, 204, 223, 0.8);
+  --featured-preview-shape-2-bg: rgba(213, 232, 212, 0.8);
+  --featured-preview-body-bg: rgba(207, 226, 240, 0.9);
+
+  /* Message Wall Page Variables */
+  --message-wall-title-color: #333;
+  --message-wall-danmu-bg: rgba(44, 62, 80, 0.1);
+  --message-wall-input-area-bg: rgba(0, 0, 0, 0.2);
+  --message-wall-input-bg: #ffffff;
+  --message-wall-input-border: #ccc;
+  --message-wall-input-focus-border: #007bff;
+  --message-wall-input-focus-shadow: rgba(0, 123, 255, 0.25);
+
+  /* Projects Page Variables */
+  --projects-social-link-color: #666;
+  --projects-social-link-hover-color: #333;
+  --projects-likes-bg: #f0f2f5;
+  --projects-button-bg: #333;
+  --projects-button-text-color: #ffffff;
+  --projects-button-hover-bg: #555;
+
+  /* Resource Sharing Page Variables */
+  --resource-primary-color: #165DFF;
+  --resource-primary-color-darker: #1247cc;
+  --resource-category-button-bg: #ffffff;
+  --resource-category-button-text: #374151;
+  --resource-category-button-border: #e5e7eb;
+  --resource-category-button-hover-border: #165DFF;
+  --resource-category-button-hover-text: #165DFF;
+  --resource-category-button-active-bg: #165DFF;
+  --resource-category-button-active-text: #ffffff;
+  --resource-type-badge-bg: rgba(22, 93, 255, 0.9);
+  --resource-type-badge-text: #ffffff;
+  --resource-avatar-bg: #e5e7eb;
+  --resource-view-details-text: #165DFF;
+  --resource-view-details-hover-text: #1247cc;
+  --resource-load-more-bg: #ffffff;
+  --resource-load-more-border: #165DFF;
+  --resource-load-more-text: #165DFF;
+  --resource-load-more-hover-bg: #165DFF;
+  --resource-load-more-hover-text: #ffffff;
+  --subscribe-section-bg: rgba(23, 116, 245, 0.44);
+  --subscribe-section-title-color: #ffffff;
+  --subscribe-section-text-color: rgba(255, 255, 255, 0.8);
+  --subscribe-section-secondary-text-color: rgba(255, 255, 255, 0.6);
+  --subscribe-button-bg: #ffffff;
+  --subscribe-button-text-color: #165DFF;
+  --subscribe-button-hover-bg: rgba(255, 255, 255, 0.9);
+  --footer-bg-color: #333333;
+  --footer-text-color: #ffffff;
+  --footer-text-secondary-color: #9ca3af;
+  --footer-border-color: #4b5563;
+
+  /* Navigation Bar */
+  --nav-bar-shadow: rgba(0, 0, 0, 0.05);
+  --theme-switch-bg: #E5E7EB;
+  --theme-switch-border: #D1D5DB;
+  --theme-switch-slider-bg: #ffffff;
+  --theme-switch-slider-icon-light: #3B82F6;
+  --theme-switch-slider-icon-dark: #F59E0B;
+  --theme-switch-text-color: #4B5563;
+
+  /* Loading Page */
+  --loader-bar-1-bg: #3498DB;
+  --loader-bar-2-bg: #EF4836;
+  --loader-bar-3-bg: #F5AB35;
+
+  /* Not Found Page */
+  --not-found-shadow: rgba(0, 0, 0, 0.1);
+  --not-found-link-shadow: rgba(52, 152, 219, 0.4);
+  --not-found-link-hover-shadow: rgba(52, 152, 219, 0.5);
+  --not-found-link-text-color: #fff;
 }
 
 a {

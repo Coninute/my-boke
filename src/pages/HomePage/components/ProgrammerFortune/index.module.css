@@ -35,10 +35,10 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.6);
-}
+} /* 卡片正面背景依然为半透明白 */
 
 .cardBack {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #667eea, #764ba2); /* 可考虑后续变量化 */
   color: white;
   transform: rotateY(180deg);
   text-align: center;
@@ -52,19 +52,19 @@
 .title {
   font-size: 22px;
   font-weight: 700;
-  color: #2c3e50;
+  color: var(--homepage-personal-card-title); /* 标题色 */
   margin: 0 0 8px 0;
 }
 
 .description {
   font-size: 16px;
-  color: #576574;
+  color: var(--homepage-personal-card-bio); /* 描述色 */
   margin-bottom: 24px;
 }
 
 .button {
-  background: linear-gradient(135deg, #ffc107, #f5a623);
-  color: #333;
+  background: var(--homepage-programmer-btn-bg); /* 按钮渐变背景 */
+  color: var(--homepage-programmer-btn-text); /* 按钮文字 */
   border: none;
   border-radius: 50px;
   padding: 14px 28px;
@@ -75,17 +75,17 @@
   align-items: center;
   gap: 10px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+  box-shadow: var(--homepage-programmer-btn-shadow); /* 按钮阴影 */
 }
 
 .button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.5);
+  box-shadow: var(--homepage-programmer-btn-hover-shadow); /* 按钮悬浮阴影 */
 }
 
 .button:active {
   transform: translateY(-1px);
-  box-shadow: 0 3px 10px rgba(255, 193, 7, 0.3);
+  box-shadow: var(--homepage-programmer-btn-active-shadow); /* 按钮按下阴影 */
 }
 
 .fortuneResult {
@@ -96,9 +96,9 @@
 
 .backButton {
     margin-top: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: var(--homepage-programmer-btn-back-bg); /* 返回按钮背景 */
+    color: var(--homepage-programmer-btn-back-text); /* 返回按钮文字 */
+    border: 1px solid var(--homepage-programmer-btn-back-border);
     border-radius: 8px;
     padding: 10px 20px;
     cursor: pointer;

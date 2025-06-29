@@ -1,9 +1,9 @@
 .card {
-  background: linear-gradient(to bottom right, #3B82F6, #1E3A8A);
+  background: linear-gradient(to bottom right, var(--contact-card-gradient-start), var(--contact-card-gradient-end));
   border-radius: 1rem; /* rounded-2xl */
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
   padding: 2rem; /* p-8 */
-  color: white;
+  color: var(--contact-card-text-color);
   transition: transform 0.3s ease;
 }
 
@@ -25,7 +25,7 @@
 
 .description {
   margin-bottom: 1.5rem; /* mb-6 */
-  color: #DBEAFE; /* text-blue-100 */
+  color: var(--contact-card-description-color); /* text-blue-100 */
 }
 
 .contactList {
@@ -42,7 +42,7 @@
 .iconWrapper {
   width: 2.5rem; /* w-10 */
   height: 2.5rem; /* h-10 */
-  background-color: rgba(255, 255, 255, 0.1); /* bg-white/10 */
+  background-color: var(--contact-card-icon-background-color); /* bg-white/10 */
   border-radius: 9999px; /* rounded-full */
   display: flex;
   align-items: center;
@@ -51,12 +51,12 @@
 }
 
 .link {
-  color: #DBEAFE; /* text-blue-100 */
+  color: var(--contact-card-description-color); /* text-blue-100 */
   transition: color 0.3s ease;
 }
 
 .link:hover {
-  color: white;
+  color: var(--contact-card-text-color);
 }
 
 .buttonWrapper {
@@ -66,8 +66,8 @@
 .button {
   display: inline-block;
   width: 100%;
-  background-color: white;
-  color: #3B82F6; /* text-primary */
+  background-color: var(--contact-card-button-background-color);
+  color: var(--contact-card-button-text-color); /* text-primary */
   font-weight: 500;
   padding: 0.75rem 1.5rem; /* py-3 px-6 */
   border-radius: 0.5rem; /* rounded-lg */
@@ -76,5 +76,5 @@
 }
 
 .button:hover {
-  background-color: rgba(255, 255, 255, 0.9); /* hover:bg-white/90 */
+  background-color: var(--contact-card-button-hover-background-color); /* hover:bg-white/90 */
 }

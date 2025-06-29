@@ -3,7 +3,7 @@
   max-width: 1600px;
   margin: 40px auto;
   padding: 40px;
-  background-color: #f8f9fa;
+  background-color: var(--section-background-color);
   border-radius: 30px;
   font-family: inherit;
 }
@@ -15,7 +15,7 @@
 .title {
   font-size: 28px;
   font-weight: 600;
-  color: #2c3e50;
+  color: var(--text-color-primary);
   margin: 0;
   display: inline-block;
   margin-right: 16px;
@@ -23,7 +23,7 @@
 
 .subtitle {
   font-size: 14px;
-  color: #7f8c8d;
+  color: var(--text-color-secondary);
   display: inline-block;
 }
 
@@ -35,7 +35,7 @@
 
 .articleCard {
   display: flex;
-  background-color: white;
+  background-color: var(--background-color-card);
   border-radius: 20px;
   padding: 20px;
   gap: 20px;
@@ -54,7 +54,7 @@
   flex-shrink: 0;
   border-radius: 12px;
   overflow: hidden;
-  background-color: #ecf0f1;
+  background-color: var(--image-placeholder-background-color);
 }
 
 .image {
@@ -73,19 +73,19 @@
 .articleTitle {
   font-size: 18px;
   font-weight: 600;
-  color: #2c3e50;
+  color: var(--text-color-primary);
   margin: 0;
 }
 
 .date {
   font-size: 12px;
-  color: #95a5a6;
+  color: var(--text-color-tertiary);
   margin: 8px 0;
 }
 
 .summary {
   font-size: 14px;
-  color: #7f8c8d;
+  color: var(--text-color-secondary);
   line-height: 1.6;
   margin: 0;
 }
@@ -96,19 +96,19 @@
   align-items: center;
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid var(--border-color);
 }
 
 .category {
   font-size: 12px;
-  color: #95a5a6;
+  color: var(--text-color-tertiary);
 }
 
 .stats {
   display: flex;
   gap: 16px;
   font-size: 12px;
-  color: #95a5a6;
+  color: var(--text-color-tertiary);
 }
 
 .stats span {
@@ -125,18 +125,18 @@
 .moreButton {
   padding: 10px 30px;
   border-radius: 20px;
-  border: 1px solid #bdc3c7;
-  background-color: white;
+  border: 1px solid var(--button-secondary-border-color);
+  background-color: var(--button-secondary-background-color);
   cursor: pointer;
   font-size: 14px;
-  color: #2c3e50;
+  color: var(--button-secondary-text-color);
   transition: all 0.3s ease;
 }
 
 .moreButton:hover {
-  background-color: #2c3e50;
-  color: white;
-  border-color: #2c3e50;
+  background-color: var(--button-secondary-hover-background-color);
+  color: var(--button-secondary-hover-text-color);
+  border-color: var(--button-secondary-hover-border-color);
 }
 
 @media (max-width: 992px) {

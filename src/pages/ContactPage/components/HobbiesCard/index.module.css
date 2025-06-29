@@ -8,14 +8,14 @@
   display: flex;
   align-items: center;
   padding: 0.75rem; /* p-3 */
-  background-color: #F0F9FF; /* bg-blue-50 */
+  background-color: var(--hobby-item-background-color); /* bg-blue-50 */
   border-radius: 0.5rem; /* rounded-lg */
 }
 
 .iconWrapper {
   width: 3rem; /* w-12 */
   height: 3rem; /* h-12 */
-  background-color: rgba(59, 130, 246, 0.1); /* bg-primary/10 */
+  background-color: var(--hobby-icon-background-color); /* bg-primary/10 */
   border-radius: 9999px; /* rounded-full */
   display: flex;
   align-items: center;
@@ -24,15 +24,15 @@
 }
 
 .icon {
-  color: #3B82F6; /* text-primary */
+  color: var(--hobby-icon-color); /* text-primary */
 }
 
 .hobbyTitle {
   font-weight: 500;
-  color: #1f2937; /* text-gray-800 */
+  color: var(--text-color-primary); /* text-gray-800 */
 }
 
 .hobbyDescription {
-  color: #4b5563; /* text-gray-600 */
+  color: var(--text-color-secondary); /* text-gray-600 */
   font-size: 0.875rem; /* text-sm */
 }

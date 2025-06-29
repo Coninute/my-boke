@@ -1,7 +1,7 @@
 .card {
-  background: #fff;
+  background: var(--background-color-card);
   border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px var(--card-shadow);
   padding: 28px 24px 20px 24px;
   max-width: 400px;
   display: flex;
@@ -14,7 +14,7 @@
   align-items: center;
   font-size: 1.18rem;
   font-weight: 600;
-  color: #333;
+  color: var(--text-color-primary);
   margin-bottom: 16px;
 }
 
@@ -23,7 +23,7 @@
   display: inline-block;
   margin-right: 8px;
   font-size: 1.25rem;
-  color: #3b82f6;
+  color: var(--link-color);
 }
 
 .tagsCloud {
@@ -33,8 +33,8 @@
 }
 
 .tagItem {
-  background: #e3f0fd;
-  color: #3b82f6;
+  background: var(--tag-background-color);
+  color: var(--tag-text-color);
   font-size: 1rem;
   padding: 4px 16px;
   border-radius: 16px;
@@ -45,6 +45,6 @@
 }
 
 .tagItem:hover {
-  background: #b4d7fa;
-  color: #2563eb;
+  background: var(--tag-hover-background-color);
+  color: var(--tag-hover-text-color);
 }

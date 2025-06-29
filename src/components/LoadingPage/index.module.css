@@ -7,7 +7,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(242, 241, 239, 0.8); /* 使用你提供的 body 背景色并增加透明度 */
+  background-color: var(--loader-overlay-background);
   z-index: 9999; /* 确保在最上层 */
 }
 
@@ -15,7 +15,7 @@
   position: relative; /* 相对于 loaderContainer 定位 */
   width: 50px;
   height: 10px;
-  background: #3498DB; /* 蓝色条 */
+  background: var(--loader-bar-1-bg); /* 蓝色条 */
   border-radius: 5px;
   animation: load 1.8s ease-in-out infinite;
 }
@@ -34,13 +34,13 @@
   top: -20px; /* 上方的红色条 */
   left: 10px;
   width: 40px;
-  background: #EF4836;
+  background: var(--loader-bar-2-bg);
 }
 
 .loader::after {
   bottom: -20px; /* 下方的黄色条 */
   width: 35px;
-  background: #F5AB35;
+  background: var(--loader-bar-3-bg);
 }
 
 @keyframes load {

@@ -8,8 +8,12 @@ function MainContent({ projects }) {
   return (
     <div className={styles.mainContentContainer}>
       <div className={styles.leftColumn}>
-        <UserProfileCard />
-        <TagsCard />
+        <div className={styles.leftCard}>
+          <UserProfileCard />
+        </div>
+        <div className={styles.leftCard}>
+          <TagsCard />
+        </div>
       </div>
       <div className={styles.rightColumn}>
         {projects && projects.map((project) => (

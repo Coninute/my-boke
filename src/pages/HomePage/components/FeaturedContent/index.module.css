@@ -5,20 +5,20 @@
   gap: 24px;
   padding: 40px;
   max-width: 1600px;
-  background-color: rgba(220, 237, 255, 0.5); /* Faint transparent blue */
+  background-color: var(--featured-container-bg); /* Faint transparent blue */
   border-radius: 30px;
   /* margin: 0 auto; */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: var(--featured-card-bg);
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid var(--featured-card-border);
 }
 
 /* Left Column */
@@ -36,30 +36,30 @@
 }
 
 .statsCard:first-child {
-    background: linear-gradient(135deg, #f1f8e9, #fce4ec);
+    background: linear-gradient(135deg, var(--featured-stats-card-1-start), var(--featured-stats-card-1-end));
 }
 
 .statsCard:last-child {
-    background: linear-gradient(135deg, #fce4ec, #e1bee7);
+    background: linear-gradient(135deg, var(--featured-stats-card-2-start), var(--featured-stats-card-2-end));
 }
 
 .statsNumber {
   font-size: 48px;
   font-weight: bold;
   display: block;
-  color: #333;
+  color: var(--text-color-primary);
 }
 
 .statsLabel {
   font-size: 16px;
-  color: #666;
+  color: var(--text-color-secondary);
 }
 
 /* Center Column */
 .introCard {
   height: 360px; /* Match height of preview card */
   flex-grow: 1;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: var(--featured-intro-card-bg);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,18 +70,18 @@
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 8px;
-  color: #2c3e50;
+  color: var(--text-color-primary);
 }
 
 .introCard p {
   font-size: 16px;
-  color: #555;
+  color: var(--text-color-secondary);
   line-height: 1.6;
 }
 
 .introCard .smallText {
     font-size: 12px;
-    color: #777;
+    color: var(--text-color-secondary);
     margin-top: 20px;
 }
 
@@ -102,23 +102,24 @@
 }
 
 .primaryButton {
-  background-color: #2c3e50;
-  color: white;
+  background-color: var(--button-primary-background-color);
+  color: var(--button-primary-text-color);
 }
 
 .primaryButton:hover {
-    background-color: #34495e;
+    background-color: var(--button-primary-hover-background-color);
 }
 
 .secondaryButton {
-  background-color: transparent;
-  color: #2c3e50;
-  border: 1px solid #bdc3c7;
+  background-color: var(--button-secondary-background-color);
+  color: var(--button-secondary-text-color);
+  border: 1px solid var(--button-secondary-border-color);
 }
 
 .secondaryButton:hover {
-    background-color: #f8f9f9;
-    border-color: #2c3e50;
+    background-color: var(--button-secondary-hover-background-color);
+    color: var(--button-secondary-hover-text-color);
+    border-color: var(--button-secondary-hover-border-color);
 }
 
 /* Right Column */
@@ -126,7 +127,7 @@
   position: relative;
   width: 360px;
   height: 360px;
-  background-color: #fdf6e3; /* Light yellow background */
+  background-color: var(--featured-preview-card-bg); /* Light yellow background */
   overflow: hidden;
 }
 
@@ -140,7 +141,7 @@
 .previewCard::before {
     width: 180px;
     height: 180px;
-    background-color: rgba(235, 204, 223, 0.8); /* Light pink */
+    background-color: var(--featured-preview-shape-1-bg); /* Light pink */
     bottom: 20px;
     left: -30px;
     transform: rotate(-15deg);
@@ -150,7 +151,7 @@
 .previewCard::after {
     width: 150px;
     height: 150px;
-    background-color: rgba(213, 232, 212, 0.8); /* Light green */
+    background-color: var(--featured-preview-shape-2-bg); /* Light green */
     bottom: -40px;
     right: 40px;
     transform: rotate(20deg);
@@ -161,7 +162,7 @@
   top: 20px;
   left: 20px;
   font-size: 14px;
-  color: #888;
+  color: var(--text-color-secondary);
   z-index: 2;
 }
 
@@ -172,7 +173,7 @@
   height: 70%;
   margin: auto;
   margin-top: 15%;
-  background-color: rgba(207, 226, 240, 0.9); /* Light blue */
+  background-color: var(--featured-preview-body-bg); /* Light blue */
   border-radius: 8px;
   display: flex;
   justify-content: center;
@@ -180,7 +181,7 @@
   text-align: center;
   font-size: 32px;
   font-weight: 600;
-  color: #34495e;
+  color: var(--text-color-primary);
   line-height: 1.3;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }

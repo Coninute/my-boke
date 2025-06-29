@@ -1,14 +1,14 @@
 .card {
-  background-color: #fff;
+  background-color: var(--background-color-card);
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px var(--card-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 20px var(--card-hover-shadow);
 }
 
 .mainContentContainer {
@@ -52,11 +52,12 @@
 .profileName {
   margin: 0;
   font-size: 1.5rem;
+  color: var(--text-color-primary);
 }
 
 .profileBio {
   margin: 0;
-  color: #666;
+  color: var(--text-color-secondary);
 }
 
 .stats {
@@ -72,15 +73,15 @@
 }
 
 .statItem span {
-  color: #666;
+  color: var(--text-color-secondary);
 }
 
 .profileButton {
   width: 100%;
   padding: 12px;
   border: none;
-  background-color: #3b82f6;
-  color: white;
+  background-color: var(--link-color);
+  color: var(--profile-button-text-color);
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
@@ -88,7 +89,7 @@
 }
 
 .profileButton:hover {
-  background-color: #2563eb;
+  background-color: var(--link-hover-color);
 }
 
 .socialLinks {
@@ -98,13 +99,13 @@
 }
 
 .socialLinks a {
-  color: #666;
+  color: var(--social-link-color);
   font-size: 1.5rem;
   transition: color 0.3s ease;
 }
 
 .socialLinks a:hover {
-  color: #333;
+  color: var(--social-link-hover-color);
 }
 
 /* ArticleCard Styles */
@@ -135,27 +136,27 @@
 .tag {
   display: inline-block;
   padding: 4px 8px;
-  background-color: #eef2f7;
-  color: #3b82f6;
+  background-color: var(--tag-background-color);
+  color: var(--tag-text-color);
   border-radius: 6px;
   font-size: 0.8rem;
   margin-right: 8px;
 }
 
 .pinnedTag {
-  background-color: #fef3c7;
-  color: #d97706;
+  background-color: var(--pinned-tag-background-color);
+  color: var(--pinned-tag-text-color);
 }
 
 .articleSummary {
-  color: #666;
+  color: var(--text-color-secondary);
   font-size: 0.9rem;
   line-height: 1.6;
 }
 
 .articleFooter {
   margin-top: 15px;
-  color: #999;
+  color: var(--article-meta-text-color);
   font-size: 0.8rem;
   display: flex;
   align-items: center;
@@ -185,7 +186,7 @@
   display: flex;
   flex-direction: column;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--text-color-secondary);
 }
 
 .weatherExtra {
@@ -219,7 +220,8 @@
 
 .tagItem {
   padding: 6px 12px;
-  background-color: #f3f4f6;
+  background-color: var(--tag-background-color);
+  color: var(--tag-text-color);
   border-radius: 6px;
   font-size: 0.9rem;
   cursor: pointer;
@@ -227,6 +229,6 @@
 }
 
 .tagItem:hover {
-  background-color: #3b82f6;
-  color: white;
+  background-color: var(--tag-hover-background-color);
+  color: var(--tag-hover-text-color);
 }

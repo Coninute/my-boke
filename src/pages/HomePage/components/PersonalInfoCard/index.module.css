@@ -1,11 +1,10 @@
 .card {
-  background-color: #fff;
+  background-color: var(--homepage-personal-card-bg); /* 卡片背景 */
   border-radius: 16px;
   padding: 36px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--homepage-personal-card-shadow); /* 卡片阴影 */
   border: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .profileHeader {
@@ -31,18 +30,18 @@
   font-size: 22px;
   font-weight: 600;
   margin: 0;
-  color: #333;
+  color: var(--homepage-personal-card-title); /* 主标题 */
 }
 
 .title {
   font-size: 17px;
-  color: #666;
+  color: var(--homepage-personal-card-subtitle); /* 副标题 */
   margin: 0;
 }
 
 .bio {
   font-size: 17px;
-  color: #555;
+  color: var(--homepage-personal-card-bio); /* 简介 */
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -53,10 +52,10 @@
 }
 
 .socialLinks a {
-  color: #555;
+  color: var(--homepage-personal-card-link); /* 社交链接 */
   transition: color 0.3s ease;
 }
 
 .socialLinks a:hover {
-  color: #007bff;
+  color: var(--homepage-personal-card-link-hover); /* 社交链接悬浮 */
 }

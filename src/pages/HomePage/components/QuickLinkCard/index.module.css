@@ -1,21 +1,21 @@
 .card {
   display: flex;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: var(--homepage-quicklink-card-bg); /* 卡片背景 */
   padding: 12px 18px;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--homepage-quicklink-card-shadow); /* 卡片阴影 */
   text-decoration: none;
-  color: #2c3e50;
+  color: var(--homepage-quicklink-card-text); /* 卡片文字 */
   transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, background-color 0.25s ease-in-out;
   width: 200px;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid var(--homepage-quicklink-card-border); /* 卡片边框 */
 }
 
 .card:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--homepage-quicklink-card-hover-shadow); /* 悬浮阴影 */
+  background-color: var(--homepage-quicklink-card-hover-bg); /* 悬浮背景 */
 }
 
 .icon {

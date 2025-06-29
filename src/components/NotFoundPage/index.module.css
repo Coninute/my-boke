@@ -5,35 +5,35 @@
   justify-content: center;
   min-height: 80vh; /* Full viewport height */
   text-align: center;
-  background-color: #f4f6f8; /* Light gray background for a subtle feel */
+  background-color: var(--background-color-secondary); /* Light gray background for a subtle feel */
   font-family: 'Arial', sans-serif;
   padding: 20px;
 }
 
 .content {
   padding: 40px;
-  background-color: #ffffff;
+  background-color: var(--background-color-primary);
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px var(--not-found-shadow);
 }
 
 .title {
   font-size: 7rem; /* Even larger 404 text */
   font-weight: bold;
-  color: #3498db; /* A bright, friendly blue */
+  color: var(--link-color); /* A bright, friendly blue */
   margin-bottom: 10px;
   line-height: 1;
 }
 
 .message {
   font-size: 1.75rem;
-  color: #555;
+  color: var(--text-color-primary);
   margin-bottom: 10px;
 }
 
 .subMessage {
   font-size: 1.1rem;
-  color: #777;
+  color: var(--text-color-secondary);
   margin-bottom: 30px;
 }
 
@@ -41,19 +41,19 @@
   display: inline-block;
   padding: 12px 30px;
   font-size: 1.1rem;
-  color: #fff;
-  background-image: linear-gradient(to right, #3498db, #2980b9);
+  color: var(--not-found-link-text-color);
+  background-image: linear-gradient(to right, var(--link-color), var(--link-hover-color));
   border: none;
   border-radius: 25px; /* More rounded button */
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+  box-shadow: 0 4px 15px var(--not-found-link-shadow);
 }
 
 .homeLink:hover,
 .homeLink:focus {
-  background-image: linear-gradient(to right, #2980b9, #3498db);
+  background-image: linear-gradient(to right, var(--link-hover-color), var(--link-color));
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.5);
+  box-shadow: 0 6px 20px var(--not-found-link-hover-shadow);
   outline: none;
 }
