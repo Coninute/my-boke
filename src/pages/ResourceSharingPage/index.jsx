@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import VantaBackground from '../../components/VantaBackground';
+import DarkVantaBackground from '@/components/DarkVantaBackground';
 import styles from './index.module.css';
 import ResourceCard from './components/ResourceCard';
 import FilterSection from './components/FilterSection';
@@ -47,10 +48,21 @@ const ResourceSharingPage = () => {
     setFilteredResources(filtered);
   }, [searchTerm, selectedCategory]);
 
+  // 读取html标签的data-theme属性，判断当前主题
+  const [isDark, setIsDark] = useState(() => document.documentElement.getAttribute('data-theme') === 'dark');
+  useEffect(() => {
+    // 监听data-theme属性变化，自动切换背景
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.getAttribute('data-theme') === 'dark');
+    });
+    observer.observe(document.documentElement, { attributes: true });
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className={styles.resourceSharingPage}>
       <div className={styles.vantaBox}>
-        <VantaBackground />
+        {isDark ? <DarkVantaBackground /> : <VantaBackground />}
       </div>
       <main className={styles.main}>
         {/* 页面标题区域 */}

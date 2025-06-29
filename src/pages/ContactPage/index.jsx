@@ -11,13 +11,26 @@ import SkillsCard from './components/SkillsCard';
 import ContactCard from './components/ContactCard';
 import StatsCard from './components/StatsCard';
 import VantaBackground from '../../components/VantaBackground';
+import DarkVantaBackground from '@/components/DarkVantaBackground';
 import Footer from '../../components/Footer';
+import { useEffect, useState } from 'react';
 
 const ContactPage = () => {
+  // 读取html标签的data-theme属性，判断当前主题
+  const [isDark, setIsDark] = useState(() => document.documentElement.getAttribute('data-theme') === 'dark');
+  useEffect(() => {
+    // 监听data-theme属性变化，自动切换背景
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.getAttribute('data-theme') === 'dark');
+    });
+    observer.observe(document.documentElement, { attributes: true });
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div>
       <div className={styles.vantaBackground}>
-        <VantaBackground />
+        {isDark ? <DarkVantaBackground /> : <VantaBackground />}
       </div>
       <div className={styles.pageWrapper}>
         <main className={styles.mainContainer}>

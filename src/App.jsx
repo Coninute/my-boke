@@ -15,6 +15,18 @@ function App() {
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
   });
 
+  // 读取html标签的data-theme属性，判断当前主题
+    const [isDark, setIsDark] = useState(() => document.documentElement.getAttribute('data-theme') === 'dark');
+  
+    useEffect(() => {
+      // 监听data-theme属性变化，自动切换背景
+      const observer = new MutationObserver(() => {
+        setIsDark(document.documentElement.getAttribute('data-theme') === 'dark');
+      });
+      observer.observe(document.documentElement, { attributes: true });
+      return () => observer.disconnect();
+    }, []);
+
   const [navDirection, setNavDirection] = useState('up');
   const lastScrollYRef = useRef(window.scrollY); // 使用 useRef 并初始化
   const navRef = useRef(null);
@@ -44,7 +56,12 @@ function App() {
         setNavDirection('up');
         navRef.current.style.display = 'block';
       }
-      navRef.current.style.backgroundColor = currentScrollY > 150 ? 'white' : 'transparent';
+      // 根据主题动态设置导航栏背景色，暗色为黑色，亮色为白色
+      if (currentScrollY > 150) {
+        navRef.current.style.backgroundColor = isDark ? 'black' : 'white';
+      } else {
+        navRef.current.style.backgroundColor = 'transparent';
+      }
 
       // 更新上次滚动位置
       lastScrollYRef.current = currentScrollY;

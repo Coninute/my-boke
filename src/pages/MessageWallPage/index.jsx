@@ -2,8 +2,19 @@ import React, { useEffect, useRef, useState } from 'react';
 import { create } from 'danmu'; // Make sure 'danmu' is installed
 import styles from './index.module.css';
 import VantaBackground from '@/components/VantaBackground'; // 导入新的背景组件
+import DarkVantaBackground from '@/components/DarkVantaBackground';
 
 const MessageWallPage = () => {
+  // 读取html标签的data-theme属性，判断当前主题
+  const [isDark, setIsDark] = useState(() => document.documentElement.getAttribute('data-theme') === 'dark');
+  useEffect(() => {
+    // 监听data-theme属性变化，自动切换背景
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.getAttribute('data-theme') === 'dark');
+    });
+    observer.observe(document.documentElement, { attributes: true });
+    return () => observer.disconnect();
+  }, []);
   const danmuContainerRef = useRef(null);
   const managerRef = useRef(null);
   const [newMessage, setNewMessage] = useState('');
@@ -196,7 +207,7 @@ const MessageWallPage = () => {
   return (
     <div className={styles.messageWallPageContainer}>
       <div className={styles.vantaBox}>
-        <VantaBackground />
+        {isDark ? <DarkVantaBackground /> : <VantaBackground />}
       </div>
       <div className={styles.scrollBox}>
         <div ref={danmuContainerRef} className={styles.danmuContainer}>

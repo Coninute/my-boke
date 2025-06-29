@@ -100,23 +100,28 @@
 }
 
 .searchInput {
-  padding: 8px 12px 8px 35px; /* Padding for icon */
+  /* 搜索输入框样式 */
+  padding: 8px 12px 8px 35px; /* 图标留白 */
   border-radius: 15px;
-  border: 1px solid var(--search-input-border);
-  background-color: var(--search-input-bg);
-  color: var(--text-color);
+  border: 1px solid var(--input-border-color);
+  background-color: var(--input-background-color);
+  color: var(--input-text-color);
   font-size: 0.9rem;
-  min-width: 200px; /* Adjust as needed */
+  min-width: 200px; /* 可根据需要调整 */
   transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .searchInput::placeholder {
-  color: var(--text-secondary-color);
+  /* 占位符颜色 */
+  color: var(--input-placeholder-color);
 }
 
 .searchInput:focus {
+  /* 聚焦时样式 */
   outline: none;
+  background-color: var(--input-focus-background-color);
   border-color: var(--nav-active-color);
+  box-shadow: 0 0 0 2px var(--input-focus-shadow);
 }
 
 .searchIcon {
@@ -226,38 +231,4 @@
 /* 暗色主题下的纯色背景 */
 [data-theme='dark'] .navbarSolid {
   background-color: var(--search-input-bg); /* 使用现有暗色变量，或指定新颜色如 #1f1f1f */
-}
-
-/* Responsive adjustments */
-@media (max-width: 850px) { /* Adjusted breakpoint for navList */
-  .navItem {
-    margin: 0 8px;
-  }
-  .navLink {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .navList {
-     display: none; /* Hide nav links on small screens, implement burger menu later if needed */
-  }
-  .searchInput {
-    min-width: 150px;
-  }
-  .navbar {
-    padding: 0 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo {
-    font-size: 1.3rem;
-  }
-  .searchInput {
-    display: none; /* Hide search on very small screens */
-  }
-  .navRight {
-    gap: 10px;
-  }
 }

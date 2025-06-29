@@ -248,6 +248,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html[data-theme='dark'] {
+  /* 暗色主题下的输入框变量 */
+  --input-background-color: #393c43;
+  --input-border-color: #23272f;
+  --input-text-color: #eee;
+  --input-placeholder-color: #ffffff;
+  --input-focus-background-color: #181b20;
+  --input-focus-shadow: rgba(100, 108, 255, 0.13);
+}
+
 html[data-theme='light'] {
   --text-color: #213547;
   --background-color: #ffffff;
